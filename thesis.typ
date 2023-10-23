@@ -1,0 +1,2 @@
+#include "./templates/cover.typ"
+
