@@ -9,18 +9,19 @@
   anonymous: false,
   info: (:),
   // 其他参数
-  title-lines: auto,
   min-title-lines: 2,
   info-inset: (x: 0pt, bottom: 1pt),
   info-key-width: 74pt,
   column-gutter: -8pt,
   row-gutter: 1pt,
   anonymous-info-keys: ("grade", "student-id", "author", "supervisor"),
+  bold-info-keys: ("title",),
+  bold-level: "bold",
   datetime-display: datetime-display,
 ) = {
   // 1.  默认参数
   info = (
-    title: ("南京大学学位论文", "Typst 模板"),
+    title: ("基于 Typst 的", "南京大学学位论文"),
     grade: "20XX",
     student-id: "1234567890",
     author: "张三",
@@ -30,19 +31,14 @@
     submit-date: datetime.today(),
   ) + info
 
-  // 2.  对 auto 参数进行处理
-  // 2.1 如果是 auto 则展示为 >= min-title-lines 行
-  if (title-lines == auto) {
-    if (is.str(info.title)) {
-      info.title = info.title.split("\n")
-    }
-    if (info.title.len() >= min-title-lines) {
-      title-lines = info.title.len()
-    } else {
-      title-lines = min-title-lines;
-    }
+  // 2.  对参数进行处理
+  // 2.1 如果是字符串，则使用换行符将标题分隔为列表
+  if (is.str(info.title)) {
+    info.title = info.title.split("\n")
   }
-  // 2.2 处理提交日期
+  // 2.2 根据 min-title-lines 填充标题
+  info.title = info.title + range(min-title-lines - info.title.len()).map((it) => "　")
+  // 2.3 处理提交日期
   if (is.type(datetime, info.submit-date)) {
     info.submit-date = datetime-display(info.submit-date)
   }
@@ -57,19 +53,26 @@
     )
   }
 
-  let info-value(body) = {
+  let info-value(key, body) = {
     set align(center)
     rect(
       width: 100%,
       inset: info-inset,
       stroke: (bottom: 1pt + black),
-      text(font: 字体.宋体, size: 字号.三号, bottom-edge: "descender", body),
+      text(
+        font: 字体.宋体,
+        size: 字号.三号,
+        weight: if (key in bold-info-keys) { bold-level } else { "regular" },
+        bottom-edge: "descender",
+        body,
+      ),
     )
   }
 
   let info-long-value(key, body) = {
     colspanx(3,
       info-value(
+        key,
         if (anonymous and (key in anonymous-info-keys)) {
           "██████████"
         } else {
@@ -81,6 +84,7 @@
 
   let info-short-value(key, body) = {
     info-value(
+      key,
       if (anonymous and (key in anonymous-info-keys)) {
         "█████"
       } else {
@@ -125,7 +129,7 @@
     info-key("专　　业"),
     info-long-value("major", info.major),
     info-key("题　　目"),
-    info-long-value("major", info.major),
+    ..info.title.map((s) => info-long-value("title", s)).intersperse(info-key("　")),
     info-key("年　　级"),
     info-short-value("grade", info.grade),
     info-key("学　　号"),
