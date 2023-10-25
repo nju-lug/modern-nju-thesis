@@ -52,8 +52,8 @@
     cover: (..args) => {
       bachelor-cover(
         anonymous: anonymous,
-        info: info,
         ..args,
+        info: info + args.named().at("info", default: (:)),
       )
     }
   )
