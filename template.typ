@@ -1,4 +1,4 @@
-#import "functions/metavalue.typ": metavalue, query-metavalue
+#import "utils/metavalue.typ": metavalue, query-metavalue
 #import "templates/cover.typ": cover
 
 #let conf(it) = {

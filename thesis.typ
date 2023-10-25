@@ -1,4 +1,4 @@
-#import "functions/metavalue.typ": metavalue
+#import "utils/metavalue.typ": metavalue
 #import "template.typ": conf
 
 #show: conf

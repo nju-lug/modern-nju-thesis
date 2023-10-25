@@ -1,5 +1,5 @@
 #import "../info.typ"
-#import "../functions/chinese-style.typ": 字号
+#import "../utils/chinese-style.typ": 字号
 #import "../style.typ": 字体
 
 // 封面
