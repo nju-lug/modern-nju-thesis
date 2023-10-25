@@ -1,8 +1,14 @@
-#import "undergraduate-cover.typ": undergraduate-cover
+#import "bachelor-cover.typ": bachelor-cover
 
 #let documentclass(
-  fallback: false,  // 字体缺失时使用 fallback，不显示豆腐块
+  type: "bachelor",
+  degree: "academic",
+  twoside: true,  // 双面模式，会加入空白页，便于打印
   anonymous: false,  // 盲审模式
+  cjk-font: auto,
+  latin-font: auto,
+  math-font: auto,
+  fallback: false,  // 字体缺失时使用 fallback，不显示豆腐块
   info: (:),
 ) = {
   // 默认参数
@@ -44,7 +50,7 @@
       it
     },
     cover: (..args) => {
-      undergraduate-cover(
+      bachelor-cover(
         anonymous: anonymous,
         info: info,
         ..args,

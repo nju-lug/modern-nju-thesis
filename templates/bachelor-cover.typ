@@ -1,7 +1,7 @@
 #import "../utils/chinese-style.typ": 字号, 字体
 
 // 封面
-#let undergraduate-cover(
+#let bachelor-cover(
   anonymous: false,
   info: (:)
 ) = {
