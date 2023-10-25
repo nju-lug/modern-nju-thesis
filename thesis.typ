@@ -3,6 +3,7 @@
 #let (
   conf,
   cover,
+  decl-page,
 ) = documentclass(
   // anonymous: true,  // 盲审模式
   info: (
@@ -26,5 +27,8 @@
 
 // 封面页
 #cover()
+
+// 声明页
+#decl-page()
 
 内容

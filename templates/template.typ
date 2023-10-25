@@ -1,4 +1,5 @@
 #import "bachelor-cover.typ": bachelor-cover
+#import "bachelor-decl-page.typ": bachelor-decl-page
 
 #let documentclass(
   type: "bachelor",
@@ -55,6 +56,12 @@
         ..args,
         info: info + args.named().at("info", default: (:)),
       )
-    }
+    },
+    decl-page: (..args) => {
+      bachelor-decl-page(
+        ..args,
+        info: info + args.named().at("info", default: (:)),
+      )
+    },
   )
 }
