@@ -1,9 +1,22 @@
-#import "../info.typ"
-#import "../utils/chinese-style.typ": 字号
-#import "../style.typ": 字体
+#import "../utils/chinese-style.typ": 字号, 字体
 
 // 封面
-#let cover(anonymous: false) = {
+#let undergraduate-cover(
+  anonymous: false,
+  info: (:)
+) = {
+  // 默认参数
+  info = (
+    title: [南京大学学位论文模板],
+    grade: "20XX",
+    student-id: "1234567890",
+    author: "张三",
+    department: "某学院",
+    major: "某专业",
+    supervisor: ("李四", "教授"),
+    submit-date: datetime.today(),
+  ) + info
+
   // 居中对齐
   set align(center)
 
@@ -51,15 +64,15 @@
     rows: (28pt, 28pt),
     gutter: 3pt,
     info_key("院　　系"),
-    info_value(if not anonymous { info.学校 } else { "██████████" }),
+    info_value(if not anonymous { info.department } else { "██████████" }),
     info_key("专　　业"),
-    info_value(if not anonymous { info.专业 } else { "██████████" }),
+    info_value(if not anonymous { info.major } else { "██████████" }),
     info_key("姓　　名"),
-    info_value(if not anonymous { info.中文作者名 } else { "██████████" }),
+    info_value(if not anonymous { info.author } else { "██████████" }),
     info_key("学　　号"),
-    info_value(if not anonymous { info.学号 } else { "██████████" }),
+    info_value(if not anonymous { info.student-id } else { "██████████" }),
     info_key("指导教师"),
-    info_value(if not anonymous { info.中文导师名 } else { "██████████" }),
+    info_value(if not anonymous { info.supervisor.at(0) } else { "██████████" }),
   )
 
   pagebreak(weak: true)

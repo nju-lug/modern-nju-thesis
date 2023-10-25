@@ -1,16 +1,18 @@
-#import "utils/metavalue.typ": metavalue
-#import "template.typ": conf
+#import "templates/template.typ": documentclass
+
+#let (
+  conf,
+  cover,
+) = documentclass(
+  // fallback: true,  // 字体缺失时使用 fallback，不显示豆腐块
+  // anonymous: true,  // 盲审模式
+  info: (
+    author: "name",
+  ),
+)
 
 #show: conf
 
-#metavalue("info", (
-  department: "某学院",
-  major: "某专业",
-  author: "张三",
-  student-id: "1234567890",
-  supervisor: "李四",
-))
+#cover()
 
-#metavalue("anonymous", true)
-
-Content
+内容
