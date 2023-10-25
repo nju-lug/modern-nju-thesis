@@ -13,8 +13,8 @@
 ) = {
   // 默认参数
   info = (
-    title: [南京大学学位论文模板],
-    title-en: [NJU Thesis Template],
+    title: ("南京大学学位论文", "Typst 模板"),
+    title-en: "NJU Thesis Template for Typst",
     grade: "20XX",
     student-id: "1234567890",
     author: "张三",

@@ -1,13 +1,18 @@
+#import "@preview/t4t:0.3.2": is
 #import "../utils/chinese-style.typ": 字号, 字体
 
 // 封面
 #let bachelor-cover(
+  // documentclass 传入的参数
   anonymous: false,
-  info: (:)
+  info: (:),
+  // 其他参数
+  title-lines: auto,
+  min-title-lines: 2,
 ) = {
   // 默认参数
   info = (
-    title: [南京大学学位论文模板],
+    title: ("南京大学学位论文", "Typst 模板"),
     grade: "20XX",
     student-id: "1234567890",
     author: "张三",
@@ -16,6 +21,17 @@
     supervisor: ("李四", "教授"),
     submit-date: datetime.today(),
   ) + info
+  // 如果是 auto 则展示为 >= min-title-lines 行
+  if (title-lines == auto) {
+    if (is.str(info.title)) {
+      info.title = info.title.split("\n")
+    }
+    if (info.title.len() >= min-title-lines) {
+      title-lines = info.title.len()
+    } else {
+      title-lines = min-title-lines;
+    }
+  }
 
   // 居中对齐
   set align(center)
