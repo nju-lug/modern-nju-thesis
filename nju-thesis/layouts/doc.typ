@@ -1,4 +1,4 @@
-#let conf(
+#let doc(
   fallback: false,  // 字体缺失时使用 fallback，不显示豆腐块
   margin: (x: 92pt),
   it,

@@ -1,4 +1,4 @@
-#import "nju-thesis/template.typ": documentclass, conf, preface, mainmatter, mainmatter-end, appendix
+#import "nju-thesis/template.typ": documentclass, doc, preface, mainmatter, mainmatter-end, appendix
 
 #let (
   cover,
@@ -24,14 +24,15 @@
   ),
 )
 
-// 全局基本处理
-#show: conf
+// 文稿设置
+#show: doc
 
 // 封面页
 #cover()
 
 // 声明页
 #decl-page()
+
 
 // 前言
 #show: preface
@@ -54,6 +55,7 @@
 #pagebreak(weak: true)
 #outline()
 
+
 // 正文
 #show: mainmatter
 
@@ -64,6 +66,7 @@
 === 引言子子标题
 
 引言内容
+
 
 = 正文
 
@@ -77,10 +80,11 @@
 
 #("正文内容" * 20)
 
-
 // 正文结束标志，不可缺少
 #mainmatter-end()
 
+
+// 附录
 #show: appendix
 
 = 附录

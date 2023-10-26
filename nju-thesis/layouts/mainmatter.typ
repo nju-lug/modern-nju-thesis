@@ -8,6 +8,7 @@
   spacing: 1.25em,
   justify: true,
   first-line-indent: 2em,
+  numbering: custom-numbering.with(first-level: "第一章 ", "1.1"),
   ..args,
   it,
 ) = {
@@ -31,7 +32,7 @@
     it
   }
   // 2.2 设置标题的 Numbering
-  set heading(numbering: custom-numbering.with(first-level: "第一章 ", "1.1"))
+  set heading(numbering: numbering)
   // 2.3 加入假段落模拟首行缩进
   show heading: it => it + fake-par
 
