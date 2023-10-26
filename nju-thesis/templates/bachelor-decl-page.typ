@@ -19,14 +19,13 @@
   // 3.  正式渲染
   pagebreak(weak: true)
 
-  set par(leading: 0.65em)
   v(12pt)
 
   align(center, image("../assets/vi/nju-emblem-purple.svg", width: 2.38cm))
 
   v(20pt)
 
-  block(width: 100%, spacing: 1.2em, align(
+  align(
     center,
     text(
       font: 字体.黑体,
@@ -34,13 +33,13 @@
       weight: "bold",
       "南京大学本科毕业论文（设计）\n诚信承诺书",
     ),
-  ))
+  )
 
   v(28pt)
 
   block[
-    #set par(justify: true, first-line-indent: 2em, leading: 2.34em)
     #set text(font: 字体.宋体, size: 字号.小三)
+    #set par(justify: true, first-line-indent: 2em, leading: 2.34em)
 
     #indent 本人郑重承诺：所呈交的毕业论文（设计）（题目：#info.title.sum()）是在指导教师的指导下严格按照学校和院系有关规定由本人独立完成的。本毕业论文（设计）中引用他人观点及参考资源的内容均已标注引用，如出现侵犯他人知识产权的行为，由本人承担相应法律责任。本人承诺不存在抄袭、伪造、篡改、代写、买卖毕业论文（设计）等违纪行为。
   ]
@@ -50,10 +49,10 @@
   align(right)[
     #set text(font: 字体.黑体, size: 字号.小三)
     
-    #block(spacing: 1.2em)[作者签名：#h(6em)]
+    作者签名：#h(6em)
 
-    #block(spacing: 1.2em)[学号：#h(6em)]
+    学号：#h(6em)
 
-    #block(spacing: 1.2em)[日期：#h(6em)]
+    日期：#h(6em)
   ]
 }

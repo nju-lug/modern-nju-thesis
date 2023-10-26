@@ -1,8 +1,13 @@
-#import "conf.typ": conf
+#import "@preview/anti-matter:0.0.2": anti-inner-end as mainmatter-end
 #import "templates/bachelor-cover.typ": bachelor-cover
 #import "templates/bachelor-decl-page.typ": bachelor-decl-page
 #import "templates/bachelor-abstract.typ": bachelor-abstract
 #import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
+#import "layouts/conf.typ": conf
+#import "layouts/preface.typ": preface
+#import "layouts/mainmatter.typ": mainmatter
+#import "layouts/appendix.typ": appendix
+#import "utils/custom-numbering.typ": custom-numbering
 #import "utils/indent.typ": indent
 
 #let documentclass(
@@ -13,7 +18,6 @@
   cjk-font: auto,
   latin-font: auto,
   math-font: auto,
-  fallback: false,  // 字体缺失时使用 fallback，不显示豆腐块
   info: (:),
 ) = {
   // 默认参数
@@ -50,11 +54,6 @@
   ) + info
 
   (
-    conf: (..args, it) => conf(
-      fallback: fallback,
-      ..args,
-      it,
-    ),
     cover: (..args) => {
       bachelor-cover(
         anonymous: anonymous,

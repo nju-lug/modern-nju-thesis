@@ -56,19 +56,19 @@
       #double-underline[南京大学本科生毕业论文（设计、作品）中文摘要]
     ]
 
-    #block(spacing: spacing)[*题目*：#info-value("title", (("",)+ info.title).sum())]
+    *题目*：#info-value("title", (("",)+ info.title).sum())
 
-    #block(spacing: spacing)[*院系*：#info-value("department", info.department)]
+    *院系*：#info-value("department", info.department)
 
-    #block(spacing: spacing)[*专业*：#info-value("major", info.major)]
+    *专业*：#info-value("major", info.major)
 
-    #block(spacing: spacing)[*本科生姓名*：#info-value("author", info.author)]
+    *本科生姓名*：#info-value("author", info.author)
 
-    #block(spacing: spacing)[*指导教师（姓名、职称）*：#info-value("supervisor", info.supervisor.at(0) + info.supervisor.at(1))]
+    *指导教师（姓名、职称）*：#info-value("supervisor", info.supervisor.at(0) + info.supervisor.at(1))
 
-    #block(spacing: spacing)[*摘要*：]
+    *摘要*：
 
-    #block(spacing: spacing)[
+    #[
       #set par(first-line-indent: 2em)
 
       #fake-par
@@ -78,6 +78,6 @@
 
     #v(1em)
 
-    #block(spacing: spacing)[*关键词*：#(("",)+ keywords.intersperse("；")).sum()]
+    *关键词*：#(("",)+ keywords.intersperse("；")).sum()
   ]
 }

@@ -1,8 +1,6 @@
-#import "@preview/anti-matter:0.0.2": anti-matter, anti-front-end, anti-inner-end
-#import "nju-thesis/template.typ": documentclass
+#import "nju-thesis/template.typ": documentclass, conf, preface, mainmatter, mainmatter-end, appendix
 
 #let (
-  conf,
   cover,
   decl-page,
   abstract,
@@ -26,6 +24,7 @@
   ),
 )
 
+// 全局基本处理
 #show: conf
 
 // 封面页
@@ -34,9 +33,8 @@
 // 声明页
 #decl-page()
 
-// 前言开始
-#counter(page).update(0)
-#show: anti-matter
+// 前言
+#show: preface
 
 // 中文摘要
 #abstract(
@@ -53,14 +51,17 @@
 ]
 
 // 生成目录
+#pagebreak(weak: true)
 #outline()
 
-// 前言结束
-#anti-front-end()
+// 正文
+#show: mainmatter
 
 = 引言
 
 == 引言子标题
+
+=== 引言子子标题
 
 引言内容
 
@@ -68,18 +69,24 @@
 
 == 正文子标题
 
-#("正文内容" * 20)
+=== 正文子子标题
 
 #("正文内容" * 20)
 
 #("正文内容" * 20)
 
+#("正文内容" * 20)
 
-// 正文结束
-#anti-inner-end()
+
+// 正文结束标志，不可缺少
+#mainmatter-end()
+
+#show: appendix
 
 = 附录
 
 == 附录子标题
+
+=== 附录子子标题
 
 附录内容

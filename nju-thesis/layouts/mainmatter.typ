@@ -1,19 +1,20 @@
-#import "utils/style.typ": 字号, 字体
-#import "utils/custom-numbering.typ": custom-numbering
-#import "utils/indent.typ": fake-par
+#import "@preview/anti-matter:0.0.2": anti-front-end
+#import "../utils/style.typ": 字号, 字体
+#import "../utils/custom-numbering.typ": custom-numbering
+#import "../utils/indent.typ": fake-par
 
-#let conf(
-  fallback: false,
-  margin: (x: 92pt),
+#let mainmatter(
   leading: 1.25em,
   spacing: 1.25em,
   justify: true,
   first-line-indent: 2em,
+  ..args,
   it,
 ) = {
-  // 1.  基本的样式设置
-  set text(fallback: fallback)
-  set page(margin: margin)
+  // 0. 标志前言结束
+  anti-front-end(..args)
+
+  // 1. 设置基本样式
   set text(font: 字体.宋体, size: 字号.小四)
   set par(
     leading: leading,

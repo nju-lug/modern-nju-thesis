@@ -58,17 +58,17 @@
 
     #v(6pt)
 
-    #block(spacing: spacing)[THESIS: #info-value("title-en", (("",)+ info.title-en).sum())]
+    THESIS: #info-value("title-en", (("",)+ info.title-en).sum())
 
-    #block(spacing: spacing)[DEPARTMENT: #info-value("department-en", info.department-en)]
+    DEPARTMENT: #info-value("department-en", info.department-en)
 
-    #block(spacing: spacing)[SPECIALIZATION: #info-value("major-en", info.major-en)]
+    SPECIALIZATION: #info-value("major-en", info.major-en)
 
-    #block(spacing: spacing)[UNDERGRADUATE: #info-value("author-en", info.author-en)]
+    UNDERGRADUATE: #info-value("author-en", info.author-en)
 
-    #block(spacing: spacing)[MENTOR: #info-value("supervisor-en", info.supervisor-en.at(1) + " " + info.supervisor-en.at(0))]
+    MENTOR: #info-value("supervisor-en", info.supervisor-en.at(1) + " " + info.supervisor-en.at(0))
 
-    #block(spacing: spacing)[ABSTRACT:]
+    ABSTRACT:
 
     #[
       #set par(first-line-indent: 2em)
@@ -80,6 +80,6 @@
 
     #v(1em)
 
-    #block(spacing: spacing)[KEYWORDS: #(("",)+ keywords.intersperse("; ")).sum()]
+    KEYWORDS: #(("",)+ keywords.intersperse("; ")).sum()
   ]
 }
