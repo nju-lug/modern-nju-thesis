@@ -1,9 +1,10 @@
-#import "templates/template.typ": documentclass
+#import "nju-thesis/template.typ": documentclass
 
 #let (
   conf,
   cover,
   decl-page,
+  abstract,
 ) = documentclass(
   // anonymous: true,  // 盲审模式
   info: (
@@ -30,5 +31,12 @@
 
 // 声明页
 #decl-page()
+
+// 中文摘要
+#abstract(
+  keywords: ("我", "就是", "测试用", "关键词")
+)[
+  中文摘要
+]
 
 内容

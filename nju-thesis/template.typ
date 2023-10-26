@@ -1,5 +1,6 @@
-#import "bachelor-cover.typ": bachelor-cover
-#import "bachelor-decl-page.typ": bachelor-decl-page
+#import "templates/bachelor-cover.typ": bachelor-cover
+#import "templates/bachelor-decl-page.typ": bachelor-decl-page
+#import "templates/bachelor-abstract.typ": bachelor-abstract
 
 #let documentclass(
   type: "bachelor",
@@ -48,6 +49,7 @@
   (
     conf: (it) => {
       set text(fallback: fallback)
+      set page(margin: (x: 92pt))
       it
     },
     cover: (..args) => {
@@ -62,6 +64,9 @@
         ..args,
         info: info + args.named().at("info", default: (:)),
       )
+    },
+    abstract: (..args) => {
+      bachelor-abstract(..args)
     },
   )
 }

@@ -1,6 +1,6 @@
 #import "@preview/t4t:0.3.2": is
 #import "../utils/indent.typ": indent
-#import "../utils/chinese-style.typ": 字号, 字体
+#import "../utils/style.typ": 字号, 字体
 
 // 封面
 #let bachelor-decl-page(info: (:)) = {
@@ -21,7 +21,7 @@
 
   align(center, image("../assets/vi/nju-emblem-purple.svg", width: 2.38cm))
 
-  v(22pt)
+  v(20pt)
 
   align(
     center,
@@ -35,23 +35,23 @@
 
   v(28pt)
 
-  block(inset: (x: 1.6em))[
+  block[
     #set text(font: 字体.宋体, size: 字号.小三)
     #set par(justify: true, first-line-indent: 2em, leading: 2.34em)
 
     #indent 本人郑重承诺：所呈交的毕业论文（设计）（题目：#info.title.sum()）是在指导教师的指导下严格按照学校和院系有关规定由本人独立完成的。本毕业论文（设计）中引用他人观点及参考资源的内容均已标注引用，如出现侵犯他人知识产权的行为，由本人承担相应法律责任。本人承诺不存在抄袭、伪造、篡改、代写、买卖毕业论文（设计）等违纪行为。
   ]
 
-  v(68pt)
+  v(70pt)
 
   align(right)[
     #set text(font: 字体.黑体, size: 字号.小三)
     
-    作者签名：#h(7.4em)
+    作者签名：#h(6em)
 
-    学号：#h(7.4em)
+    学号：#h(6em)
 
-    日期：#h(7.4em)
+    日期：#h(6em)
   ]
 
   pagebreak()
