@@ -37,6 +37,8 @@
   }
 
   // 4.  正式渲染
+  pagebreak(weak: true)
+
   [
     #set text(font: 字体.楷体, size: 字号.小四)
     #set par(leading: leading, justify: true)
@@ -72,6 +74,4 @@
 
     #block(spacing: spacing)[*关键词*：#(("",)+ keywords.intersperse("；")).sum()]
   ]
-
-  pagebreak()
 }

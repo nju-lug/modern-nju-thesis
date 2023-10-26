@@ -95,6 +95,9 @@
   
 
   // 4.  正式渲染
+  
+  pagebreak(weak: true)
+
   // 居中对齐
   set align(center)
 
@@ -143,6 +146,4 @@
     info-key("提交日期"),
     info-long-value("submit", info.submit-date),
   ))
-
-  pagebreak(weak: true)
 }

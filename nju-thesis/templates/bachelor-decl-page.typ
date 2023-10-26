@@ -17,6 +17,8 @@
 
 
   // 3.  正式渲染
+  pagebreak(weak: true)
+
   set par(leading: 0.65em)
   v(12pt)
 
@@ -54,6 +56,4 @@
 
     #block(spacing: 1.2em)[日期：#h(6em)]
   ]
-
-  pagebreak()
 }

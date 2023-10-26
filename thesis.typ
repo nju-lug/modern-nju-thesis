@@ -1,3 +1,4 @@
+#import "@preview/anti-matter:0.0.2": anti-matter, anti-front-end, anti-inner-end
 #import "nju-thesis/template.typ": documentclass
 
 #let (
@@ -33,6 +34,10 @@
 // 声明页
 #decl-page()
 
+// 前言开始
+#counter(page).update(0)
+#show: anti-matter
+
 // 中文摘要
 #abstract(
   keywords: ("我", "就是", "测试用", "关键词")
@@ -47,4 +52,27 @@
   English abstract
 ]
 
-内容
+// 前言结束
+#anti-front-end()
+
+= 引言
+
+== 引言子标题
+
+引言内容
+
+= 正文
+
+== 正文子标题
+
+正文内容
+
+
+// 正文结束
+#anti-inner-end()
+
+= 附录
+
+== 附录子标题
+
+附录内容

@@ -13,6 +13,7 @@
   set text(font: 字体.宋体, size: 字号.小四)
   set par(leading: leading, justify: justify)
   show par: set block(spacing: spacing)
+  show heading.where(level: 1): it => pagebreak(weak: true) + it
 
   it
 }
