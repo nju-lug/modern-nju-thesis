@@ -1,3 +1,4 @@
+#import "conf.typ": conf
 #import "templates/bachelor-cover.typ": bachelor-cover
 #import "templates/bachelor-decl-page.typ": bachelor-decl-page
 #import "templates/bachelor-abstract.typ": bachelor-abstract
@@ -48,11 +49,10 @@
   ) + info
 
   (
-    conf: (it) => {
-      set text(fallback: fallback)
-      set page(margin: (x: 92pt))
-      it
-    },
+    conf: (it) => conf(
+      fallback: fallback,
+      it,
+    ),
     cover: (..args) => {
       bachelor-cover(
         anonymous: anonymous,
