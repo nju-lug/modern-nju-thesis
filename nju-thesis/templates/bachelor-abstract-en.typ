@@ -10,8 +10,8 @@
   // 其他参数
   keywords: (),
   anonymous-info-keys: ("author-en", "supervisor-en"),
-  leading: 1.08em,
-  spacing: 1.08em,
+  leading: 1.28em,
+  spacing: 1.28em,
   body,
 ) = {
   // 1.  默认参数
@@ -48,17 +48,19 @@
       #double-underline[南京大学本科生毕业论文（设计、作品）英文摘要]
     ]
 
-    THESIS: #info-value("title-en", (("",)+ info.title-en).sum())
+    #v(6pt)
 
-    DEPARTMENT: #info-value("department-en", info.department-en)
+    #block(spacing: spacing)[THESIS: #info-value("title-en", (("",)+ info.title-en).sum())]
 
-    SPECIALIZATION: #info-value("major-en", info.major-en)
+    #block(spacing: spacing)[DEPARTMENT: #info-value("department-en", info.department-en)]
 
-    UNDERGRADUATE: #info-value("author-en", info.author-en)
+    #block(spacing: spacing)[SPECIALIZATION: #info-value("major-en", info.major-en)]
 
-    MENTOR: #info-value("supervisor-en", info.supervisor-en.at(1) + " " + info.supervisor-en.at(0))
+    #block(spacing: spacing)[UNDERGRADUATE: #info-value("author-en", info.author-en)]
 
-    ABSTRACT:
+    #block(spacing: spacing)[MENTOR: #info-value("supervisor-en", info.supervisor-en.at(1) + " " + info.supervisor-en.at(0))]
+
+    #block(spacing: spacing)[ABSTRACT:]
 
     #[
       #set par(first-line-indent: 2em)
@@ -70,7 +72,7 @@
 
     #v(1em)
 
-    KEYWORDS: #(("",)+ keywords.intersperse("; ")).sum()
+    #block(spacing: spacing)[KEYWORDS: #(("",)+ keywords.intersperse("; ")).sum()]
   ]
 
   pagebreak()

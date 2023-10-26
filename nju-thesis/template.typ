@@ -49,8 +49,9 @@
   ) + info
 
   (
-    conf: (it) => conf(
+    conf: (..args, it) => conf(
       fallback: fallback,
+      ..args,
       it,
     ),
     cover: (..args) => {
