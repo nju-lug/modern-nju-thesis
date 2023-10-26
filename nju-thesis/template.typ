@@ -1,6 +1,7 @@
 #import "templates/bachelor-cover.typ": bachelor-cover
 #import "templates/bachelor-decl-page.typ": bachelor-decl-page
 #import "templates/bachelor-abstract.typ": bachelor-abstract
+#import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
 
 #let documentclass(
   type: "bachelor",
@@ -67,6 +68,13 @@
     },
     abstract: (..args) => {
       bachelor-abstract(
+        anonymous: anonymous,
+        ..args,
+        info: info + args.named().at("info", default: (:)),
+      )
+    },
+    abstract-en: (..args) => {
+      bachelor-abstract-en(
         anonymous: anonymous,
         ..args,
         info: info + args.named().at("info", default: (:)),
