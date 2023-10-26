@@ -5,6 +5,7 @@
   decl-page,
   abstract,
   abstract-en,
+  outline-page,
 ) = documentclass(
   // anonymous: true,  // 盲审模式
   info: (
@@ -51,10 +52,8 @@
   English abstract
 ]
 
-// 生成目录
-#pagebreak(weak: true)
-#outline()
-
+// 目录
+#outline-page()
 
 // 正文
 #show: mainmatter
@@ -64,6 +63,8 @@
 == 引言子标题
 
 === 引言子子标题
+
+==== 引言子子子标题
 
 引言内容
 

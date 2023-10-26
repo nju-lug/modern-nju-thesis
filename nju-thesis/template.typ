@@ -3,21 +3,23 @@
 #import "templates/bachelor-decl-page.typ": bachelor-decl-page
 #import "templates/bachelor-abstract.typ": bachelor-abstract
 #import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
+#import "templates/bachelor-outline-page.typ": bachelor-outline-page
 #import "layouts/doc.typ": doc
 #import "layouts/preface.typ": preface
 #import "layouts/mainmatter.typ": mainmatter
 #import "layouts/appendix.typ": appendix
 #import "utils/custom-numbering.typ": custom-numbering
 #import "utils/indent.typ": indent
+#import "utils/style.typ": 字号
 
 #let documentclass(
-  type: "bachelor",
-  degree: "academic",
-  twoside: true,  // 双面模式，会加入空白页，便于打印
+  type: "bachelor",  // TODO: 
+  degree: "academic",  // TODO: 
+  twoside: true,  // TODO: 双面模式，会加入空白页，便于打印
   anonymous: false,  // 盲审模式
-  cjk-font: auto,
-  latin-font: auto,
-  math-font: auto,
+  cjk-font: auto,  // TODO: 
+  latin-font: auto,  // TODO: 
+  math-font: auto,  // TODO: 
   info: (:),
 ) = {
   // 默认参数
@@ -79,6 +81,11 @@
         anonymous: anonymous,
         ..args,
         info: info + args.named().at("info", default: (:)),
+      )
+    },
+    outline-page: (..args) => {
+      bachelor-outline-page(
+        ..args,
       )
     },
   )
