@@ -3,6 +3,7 @@
 #import "templates/bachelor-decl-page.typ": bachelor-decl-page
 #import "templates/bachelor-abstract.typ": bachelor-abstract
 #import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
+#import "utils/indent.typ": indent
 
 #let documentclass(
   type: "bachelor",
