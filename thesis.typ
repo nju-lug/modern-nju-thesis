@@ -1,11 +1,8 @@
-#import "nju-thesis/template.typ": documentclass, doc, preface, mainmatter, mainmatter-end, appendix
+#import "nju-thesis/template.typ": documentclass
 
 #let (
-  cover,
-  decl-page,
-  abstract,
-  abstract-en,
-  outline-page,
+  doc, preface, mainmatter, mainmatter-end, appendix,
+  cover, decl-page, abstract, abstract-en, outline-page,
 ) = documentclass(
   // anonymous: true,  // 盲审模式
   info: (

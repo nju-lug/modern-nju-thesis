@@ -56,6 +56,31 @@
   ) + info
 
   (
+    doc: (..args) => {
+      doc(
+        ..args,
+      )
+    },
+    preface: (..args) => {
+      preface(
+        ..args,
+      )
+    },
+    mainmatter: (..args) => {
+      mainmatter(
+        ..args,
+      )
+    },
+    mainmatter-end: (..args) => {
+      mainmatter-end(
+        ..args,
+      )
+    },
+    appendix: (..args) => {
+      appendix(
+        ..args,
+      )
+    },
     cover: (..args) => {
       bachelor-cover(
         anonymous: anonymous,
