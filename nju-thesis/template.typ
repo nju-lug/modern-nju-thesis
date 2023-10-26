@@ -66,7 +66,11 @@
       )
     },
     abstract: (..args) => {
-      bachelor-abstract(..args)
+      bachelor-abstract(
+        anonymous: anonymous,
+        ..args,
+        info: info + args.named().at("info", default: (:)),
+      )
     },
   )
 }
