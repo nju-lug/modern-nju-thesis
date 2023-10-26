@@ -2,6 +2,7 @@
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/indent.typ": fake-par
 #import "../utils/double-underline.typ": double-underline
+#import "../utils/invisible-heading.typ": invisible-heading
 
 #let bachelor-abstract-en(
   // documentclass 传入的参数
@@ -9,6 +10,8 @@
   info: (:),
   // 其他参数
   keywords: (),
+  outline-title: "ABSTRACT",
+  outlined: true,
   anonymous-info-keys: ("author-en", "supervisor-en"),
   leading: 1.28em,
   spacing: 1.28em,
@@ -43,6 +46,9 @@
     #set text(font: 字体.楷体, size: 字号.小四)
     #set par(leading: leading, justify: true)
     #show par: set block(spacing: spacing)
+
+    // 标记一个不可见的标题用于目录生成
+    #invisible-heading(outlined: outlined, outline-title)
 
     #align(center)[
       #set text(size: 字号.小二, weight: "bold")

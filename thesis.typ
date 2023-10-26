@@ -52,6 +52,9 @@
   English abstract
 ]
 
+// 生成目录
+#outline()
+
 // 前言结束
 #anti-front-end()
 
