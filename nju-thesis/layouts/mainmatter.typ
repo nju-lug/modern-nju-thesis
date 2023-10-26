@@ -4,6 +4,9 @@
 #import "../utils/indent.typ": fake-par
 
 #let mainmatter(
+  // documentclass 传入参数
+  fonts: (:),
+  // 其他参数
   leading: 1.25em,
   spacing: 1.25em,
   justify: true,
@@ -16,7 +19,8 @@
   anti-front-end(..args)
 
   // 1. 设置基本样式
-  set text(font: 字体.宋体, size: 字号.小四)
+  fonts = 字体 + fonts
+  set text(font: fonts.宋体, size: 字号.小四)
   set par(
     leading: leading,
     justify: justify,

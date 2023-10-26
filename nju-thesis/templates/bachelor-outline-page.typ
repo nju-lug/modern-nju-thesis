@@ -2,15 +2,18 @@
 #import "../utils/style.typ": 字号, 字体
 
 #let bachelor-outline-page(
+  // documentclass 传入参数
+  fonts: (:),
+  // 其他参数
   depth: 3,
   title: "目　　录",
   title-vspace: 50pt,
-  title-text-args: (font: 字体.宋体, size: 字号.三号, weight: "bold"),
+  title-text-args: auto,
   // 引用页数的字体，这里用于显示 Times New Roman
-  reference-font: 字体.宋体,
+  reference-font: auto,
   reference-size: 字号.小四,
   // 字体与字号
-  font: (字体.黑体, 字体.宋体),
+  font: auto,
   size: (字号.四号, 字号.小四),
   // 垂直间距
   vspace: (25pt, 14pt),
@@ -19,7 +22,21 @@
   fill: (none, auto),
   ..args,
 ) = {
-  // 正式渲染
+  // 1.  默认参数
+  fonts = 字体 + fonts
+  if (title-text-args == auto) {
+    title-text-args = (font: fonts.宋体, size: 字号.三号, weight: "bold")
+  }
+  // 引用页数的字体，这里用于显示 Times New Roman
+  if (reference-font == auto) {
+    reference-font = fonts.宋体
+  }
+  // 字体与字号
+  if (font == auto) {
+    font = (fonts.黑体, fonts.宋体)
+  }
+
+  // 2.  正式渲染
   pagebreak(weak: true)
 
   // 默认显示的字体

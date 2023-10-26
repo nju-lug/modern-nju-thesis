@@ -2,9 +2,11 @@
 
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,
+  fonts-display-page,
   cover, decl-page, abstract, abstract-en, outline-page,
 ) = documentclass(
   // anonymous: true,  // 盲审模式
+  // fonts: (楷体: ("Times New Roman", "FZKai-Z03S")),  // 可自定义字体，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   info: (
     title: ("基于 Typst 的", "南京大学学位论文"),
     title-en: "NJU Thesis Template for Typst",
@@ -24,6 +26,9 @@
 
 // 文稿设置
 #show: doc
+
+// 字体展示测试页
+// #fonts-display-page()
 
 // 封面页
 #cover()

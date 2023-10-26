@@ -7,6 +7,7 @@
 #let bachelor-abstract-en(
   // documentclass 传入的参数
   anonymous: false,
+  fonts: (:),
   info: (:),
   // 其他参数
   keywords: (),
@@ -18,6 +19,7 @@
   body,
 ) = {
   // 1.  默认参数
+  fonts = 字体 + fonts
   info = (
     title-en: "NJU Thesis Template for Typst",
     author-en: "Zhang San",
@@ -43,7 +45,7 @@
   [
     #pagebreak(weak: true)
 
-    #set text(font: 字体.楷体, size: 字号.小四)
+    #set text(font: fonts.楷体, size: 字号.小四)
     #set par(leading: leading, justify: true)
     #show par: set block(spacing: spacing)
 

@@ -7,6 +7,7 @@
 #let bachelor-cover(
   // documentclass 传入的参数
   anonymous: false,
+  fonts: (:),
   info: (:),
   // 其他参数
   min-title-lines: 2,
@@ -20,6 +21,7 @@
   datetime-display: datetime-display,
 ) = {
   // 1.  默认参数
+  fonts = 字体 + fonts
   info = (
     title: ("基于 Typst 的", "南京大学学位论文"),
     grade: "20XX",
@@ -49,7 +51,7 @@
       width: 100%,
       inset: info-inset,
       stroke: none,
-      text(font: 字体.楷体, size: 字号.三号, body),
+      text(font: fonts.楷体, size: 字号.三号, body),
     )
   }
 
@@ -60,7 +62,7 @@
       inset: info-inset,
       stroke: (bottom: 1pt + black),
       text(
-        font: 字体.宋体,
+        font: fonts.宋体,
         size: 字号.三号,
         weight: if (key in bold-info-keys) { bold-level } else { "regular" },
         bottom-edge: "descender",
@@ -115,7 +117,7 @@
   }
 
   // 将中文之间的空格间隙从 0.25 em 调整到 0.5 em
-  text(size: 字号.一号, font: 字体.宋体, spacing: 200%, weight: "bold")[本 科 毕 业 论 文]
+  text(size: 字号.一号, font: fonts.宋体, spacing: 200%, weight: "bold")[本 科 毕 业 论 文]
   
   if (anonymous) {
     v(132pt)
