@@ -1,4 +1,6 @@
-#import "nju-thesis/template.typ": documentclass
+#import "nju-thesis/template.typ": documentclass, tablex, fig, tlt
+// import the package
+#import "@preview/i-figured:0.1.0"
 
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,
@@ -61,24 +63,57 @@
 // 正文
 #show: mainmatter
 
-= 引言
+= 基本功能
 
-== 引言子标题
+== 脚注
 
-=== 引言子子标题
+我们可以添加一个脚注。#footnote[脚注内容]
 
-==== 引言子子子标题
+== 图表
 
-量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力，量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力。#footnote[测试内容 1]
+引用@tbl:timing，引用@tbl:timing-tlt，以及@fig:nju-logo。引用图表时，表格、图片和代码分别需要加上 `tbl:`、`fig:` 和 `lst:` 前缀才能正常显示编号。以及这里使用 `fig` 替代原生 `figure` 以支持将 `tablex` 作为表格来识别。
 
-量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力，量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力。#footnote[测试内容 2]
+#align(center, (stack(dir: ltr)[
+  #fig(
+    tablex(
+      align: center + horizon,
+      columns: 4,
+      [t], [1], [2], [3],
+      [y], [0.3s], [0.4s], [0.8s],
+    ),
+    caption: [常规表],
+  ) <timing>
+][
+  #h(50pt)
+][
+  #fig(
+    tlt(
+      columns: 4,
+      [t], [1], [2], [3],
+      [y], [0.3s], [0.4s], [0.8s],
+    ),
+    caption: [三线表],
+  ) <timing-tlt>
+]))
 
-==== 量子计算
+#fig(
+  image("nju-thesis/assets/vi/nju-emblem.svg", width: 20%),
+  caption: [图片测试],
+) <nju-logo>
 
-量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力，量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力。
 
-量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力，量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力。
+== 代码块
 
+```py
+def add(x, y):
+  return x + y
+```
+
+== 数学公式
+
+行内公式 $x + y$ 以及行间公式
+
+$ x^2 + y^2 = 1 $
 
 = 正文
 
@@ -86,11 +121,8 @@
 
 === 正文子子标题
 
-#("正文内容" * 20)
+正文内容
 
-#("正文内容" * 20)
-
-#("正文内容" * 20)
 
 #acknowledgement[
   致谢内容

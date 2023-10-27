@@ -11,6 +11,7 @@
 #import "templates/bachelor-outline-page.typ": bachelor-outline-page
 #import "templates/acknowledgement.typ": acknowledgement
 #import "utils/custom-numbering.typ": custom-numbering
+#import "utils/custom-tablex.typ": *
 #import "utils/indent.typ": indent
 #import "utils/style.typ": 字体
 #import "utils/style.typ": 字号

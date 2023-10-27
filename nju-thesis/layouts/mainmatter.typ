@@ -1,4 +1,5 @@
 #import "@preview/anti-matter:0.0.2": anti-front-end
+#import "@preview/i-figured:0.1.0"
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/custom-numbering.typ": custom-numbering
 #import "../utils/indent.typ": fake-par
@@ -26,29 +27,30 @@
   ..args,
   it,
 ) = {
-  // 0. 标志前言结束
+  // 0.  标志前言结束
   anti-front-end()
 
-  // 1. 默认参数
+  // 1.  默认参数
   fonts = 字体 + fonts
   if (text-args == auto) {
     text-args = (font: fonts.宋体, size: 字号.小四)
   }
-  // 字体与字号
+  // 1.1 字体与字号
   if (heading-font == auto) {
     heading-font = (fonts.黑体,)
   }
-  // 处理 heading- 开头的其他参数
+  // 1.2 处理 heading- 开头的其他参数
   let heading-text-args-lists = args.named().pairs()
     .filter((pair) => pair.at(0).starts-with("heading-"))
     .map((pair) => (pair.at(0).slice("heading-".len()), pair.at(1)))
 
-  // 2. 辅助函数
+  // 2.  辅助函数
   let array-at(arr, pos) = {
     arr.at(calc.min(pos, arr.len()) - 1)
   }
 
-  // 3. 设置基本样式
+  // 3.  设置基本样式
+  // 3.1 文本和段落样式
   set text(..text-args)
   set par(
     leading: leading,
@@ -56,7 +58,16 @@
     first-line-indent: first-line-indent
   )
   show par: set block(spacing: spacing)
+  // 3.2 脚注样式
   show footnote.entry: set text(font: fonts.宋体, size: 字号.五号)
+  // 3.3 设置 figure 的编号
+  show heading: i-figured.reset-counters
+  show figure: i-figured.show-figure
+  // 3.4 表格表头置顶 + 不用冒号用空格分割
+  show figure.where(
+    kind: table
+  ): set figure.caption(position: top)
+  set figure.caption(separator: "  ")
 
   // 4.  处理标题
   // 4.1 设置标题的 Numbering
