@@ -139,6 +139,10 @@ $ y = integral_1^2 x^2 dif x $ <->
 
 $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
+== 参考文献
+
+可以像这样引用参考文献：@wang2010guide 和 @kopka2004guide。
+
 == 代码块
 
 ```py
@@ -156,6 +160,13 @@ def add(x, y):
 正文内容
 
 
+// 参考文献
+#bibliography(("bibs/ex01.bib", "bibs/ex02.bib"),
+  style: "ieee"
+)
+
+
+// 致谢
 #acknowledgement[
   致谢内容
 ]

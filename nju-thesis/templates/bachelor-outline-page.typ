@@ -1,4 +1,5 @@
 #import "@preview/outrageous:0.1.0"
+#import "../utils/invisible-heading.typ": invisible-heading
 #import "../utils/style.typ": 字号, 字体
 
 // 本科生目录生成
@@ -46,8 +47,9 @@
 
   {
     set align(center)
-    set text(..title-text-args)
-    heading(level: 1, outlined: outlined, title)
+    text(..title-text-args, title)
+    // 标记一个不可见的标题用于目录生成
+    invisible-heading(level: 1, outlined: outlined, title)
   }
 
   v(title-vspace)
