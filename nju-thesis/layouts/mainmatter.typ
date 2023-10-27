@@ -56,6 +56,7 @@
     first-line-indent: first-line-indent
   )
   show par: set block(spacing: spacing)
+  show footnote.entry: set text(font: fonts.宋体, size: 字号.五号)
 
   // 4.  处理标题
   // 4.1 设置标题的 Numbering
