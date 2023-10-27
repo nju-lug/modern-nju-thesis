@@ -17,8 +17,9 @@
   leading-zero: true,
   numbering: "(1.1)",
   prefix: "eqt:",
+  numbering-none-label: "-",
 ) = {
-  if "label" in it.fields() and str(it.label).starts-with(prefix) {
+  if "label" in it.fields() and (str(it.label).starts-with(prefix) or str(it.label) == numbering-none-label) {
     it
   } else {
     let numbers = counter(heading).at(it.location())

@@ -16,6 +16,6 @@
   // 设置 figure 的编号
   show figure: show-figure
   // 设置 equation 的编号
-  show math.equation: show-equation
+  show math.equation.where(block: true): show-equation
   it
 }

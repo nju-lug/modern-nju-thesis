@@ -1,4 +1,4 @@
-#import "nju-thesis/template.typ": documentclass, tablex, fig, tlt
+#import "nju-thesis/template.typ": documentclass, tablex, fig, tlt, indent
 
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,
@@ -67,6 +67,27 @@
 
 我们可以添加一个脚注。#footnote[脚注内容]
 
+== 列表
+
+=== 无序列表
+
+- 无序列表项一
+- 无序列表项二
+  - 无序子列表项一
+  - 无序子列表项二
+
+== 有序列表
+
++ 有序列表项一
++ 有序列表项二
+  + 有序子列表项一
+  + 有序子列表项二
+
+== 术语列表
+
+/ 术语一: 术语解释
+/ 术语二: 术语解释
+
 == 图表
 
 引用@tbl:timing，引用@tbl:timing-tlt，以及@fig:nju-logo。引用图表时，表格、图片和代码分别需要加上 `tbl:`、`fig:` 和 `lst:` 前缀才能正常显示编号。以及这里使用 `fig` 函数替代原生 `figure` 函数以支持将 `tablex` 作为表格来识别。
@@ -100,23 +121,30 @@
 ) <nju-logo>
 
 
-== 代码块
-
-```py
-def add(x, y):
-  return x + y
-```
-
 == 数学公式
 
-
-我们定义：
+可以像 Markdown 一样写行内公式 $x + y$，以及带编号的行间公式：
 
 $ phi.alt := (1 + sqrt(5)) / 2 $ <ratio>
 
 引用数学公式需要加上 `eqt:` 前缀，则由@eqt:ratio，我们有：
 
 $ F_n = floor(1 / sqrt(5) phi.alt^n) $
+
+#indent 图表和公式后的段落要用 `#indent` 手动缩进。同时，我们也可以通过 `<->` 标签来标识该行间公式不需要编号
+
+$ y = integral_1^2 x^2 dif x $ <->
+
+而后续数学公式仍然能正常编号。
+
+$ F_n = floor(1 / sqrt(5) phi.alt^n) $
+
+== 代码块
+
+```py
+def add(x, y):
+  return x + y
+```
 
 
 = 正文

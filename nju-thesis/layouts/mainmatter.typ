@@ -75,7 +75,10 @@
   set figure.caption(separator: "  ")
   // 3.5 设置 equation 的编号
   show heading: i-equation.reset-counters
-  show math.equation: show-equation
+  show math.equation.where(block: true): show-equation
+  // 3.6 优化列表显示
+  //     术语列表 terms 不应该缩进
+  show terms: set par(first-line-indent: 0pt)
 
   // 4.  处理标题
   // 4.1 设置标题的 Numbering
