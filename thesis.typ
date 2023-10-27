@@ -182,7 +182,7 @@ def add(x, y):
 
 // 致谢
 #acknowledgement[
-  致谢内容
+  感谢 NJU-LUG，感谢 NJUThesis LaTeX 模板。
 ]
 
 // 手动分页

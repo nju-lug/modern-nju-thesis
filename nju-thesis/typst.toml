@@ -1,0 +1,7 @@
+[package]
+name = "nju-thesis"
+version = "0.1.0"
+entrypoint = "template.typ"
+authors = ["OrangeX4"]
+license = "MIT"
+description = "南京大学学位论文模板。Nanjing University Thesis."
