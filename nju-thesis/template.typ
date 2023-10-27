@@ -1,3 +1,8 @@
+// 南京大学学位论文模板 nju-thesis-typst
+// Author: https://github.com/OrangeX4
+// Repo: https://github.com/OrangeX4/nju-thesis-typst
+// 在线模板可能不会更新得很及时，如果需要最新版本，请关注 Repo
+
 #import "@preview/anti-matter:0.0.2": anti-inner-end as mainmatter-end
 #import "layouts/doc.typ": doc
 #import "layouts/preface.typ": preface
