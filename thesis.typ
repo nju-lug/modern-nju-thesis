@@ -1,6 +1,4 @@
 #import "nju-thesis/template.typ": documentclass, tablex, fig, tlt
-// import the package
-#import "@preview/i-figured:0.1.0"
 
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,
@@ -71,7 +69,7 @@
 
 == 图表
 
-引用@tbl:timing，引用@tbl:timing-tlt，以及@fig:nju-logo。引用图表时，表格、图片和代码分别需要加上 `tbl:`、`fig:` 和 `lst:` 前缀才能正常显示编号。以及这里使用 `fig` 替代原生 `figure` 以支持将 `tablex` 作为表格来识别。
+引用@tbl:timing，引用@tbl:timing-tlt，以及@fig:nju-logo。引用图表时，表格、图片和代码分别需要加上 `tbl:`、`fig:` 和 `lst:` 前缀才能正常显示编号。以及这里使用 `fig` 函数替代原生 `figure` 函数以支持将 `tablex` 作为表格来识别。
 
 #align(center, (stack(dir: ltr)[
   #fig(
@@ -111,9 +109,15 @@ def add(x, y):
 
 == 数学公式
 
-行内公式 $x + y$ 以及行间公式
 
-$ x^2 + y^2 = 1 $
+我们定义：
+
+$ phi.alt := (1 + sqrt(5)) / 2 $ <ratio>
+
+引用数学公式需要加上 `eqt:` 前缀，则由@eqt:ratio，我们有：
+
+$ F_n = floor(1 / sqrt(5) phi.alt^n) $
+
 
 = 正文
 

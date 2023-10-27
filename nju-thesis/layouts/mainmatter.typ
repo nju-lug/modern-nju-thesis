@@ -1,5 +1,6 @@
 #import "@preview/anti-matter:0.0.2": anti-front-end
 #import "@preview/i-figured:0.1.0"
+#import "../utils/i-equation.typ"
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/custom-numbering.typ": custom-numbering
 #import "../utils/indent.typ": fake-par
@@ -68,6 +69,9 @@
     kind: table
   ): set figure.caption(position: top)
   set figure.caption(separator: "  ")
+  // 3.5 设置 equation 的编号
+  show heading: i-equation.reset-counters
+  show math.equation: i-equation.show-equation
 
   // 4.  处理标题
   // 4.1 设置标题的 Numbering
