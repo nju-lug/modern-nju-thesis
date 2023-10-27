@@ -19,6 +19,10 @@
   heading-font: auto,
   heading-size: (字号.四号,),
   heading-weight: ("regular",),
+  heading-top-vspace: (20pt, 0pt),
+  heading-bottom-vspace: (20pt, 12pt),
+  heading-pagebreak: (true, false),
+  heading-align: (center, auto),
   ..args,
   it,
 ) = {
@@ -54,15 +58,9 @@
   show par: set block(spacing: spacing)
 
   // 4.  处理标题
-  // 4.1 大标题居中
-  show heading.where(level: 1): it => {
-    pagebreak(weak: true)
-    set align(center)
-    it
-  }
-  // 4.2 设置标题的 Numbering
+  // 4.1 设置标题的 Numbering
   set heading(numbering: numbering)
-  // 4.3 设置字体字号并加入假段落模拟首行缩进
+  // 4.2 设置字体字号并加入假段落模拟首行缩进
   show heading: it => {
     set text(
       font: array-at(heading-font, it.level),
@@ -70,7 +68,22 @@
       ..unpairs(heading-text-args-lists
         .map((pair) => (pair.at(0), array-at(pair.at(1), it.level))))
     )
-    it + fake-par
+    v(array-at(heading-top-vspace, it.level))
+    it
+    v(array-at(heading-bottom-vspace, it.level))
+    fake-par
+  }
+  // 4.3 标题居中与换页
+  show heading: it => {
+    if (array-at(heading-pagebreak, it.level)) {
+      pagebreak(weak: true)
+    }
+    if (array-at(heading-align, it.level) != auto) {
+      set align(array-at(heading-align, it.level))
+      it
+    } else {
+      it
+    }
   }
 
   it
