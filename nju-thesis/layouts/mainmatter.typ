@@ -11,7 +11,7 @@
   spacing: 1.25em,
   justify: true,
   first-line-indent: 2em,
-  numbering: custom-numbering.with(first-level: "第一章 ", "1.1 "),
+  numbering: custom-numbering.with(first-level: "第一章 ", depth: 3, "1.1 "),
   ..args,
   it,
 ) = {
