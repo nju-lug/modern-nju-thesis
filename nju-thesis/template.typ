@@ -62,6 +62,7 @@
     doc: (..args) => {
       doc(
         ..args,
+        info: info + args.named().at("info", default: (:)),
       )
     },
     preface: (..args) => {
