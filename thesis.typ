@@ -2,8 +2,7 @@
 
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,
-  fonts-display-page,
-  cover, decl-page, abstract, abstract-en, outline-page, acknowledgement,
+  fonts-display-page, cover, decl-page, abstract, abstract-en, outline-page, notation, acknowledgement,
 ) = documentclass(
   // anonymous: true,  // 盲审模式
   // 可自定义字体，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
@@ -60,6 +59,12 @@
 
 // 正文
 #show: mainmatter
+
+// 符号表
+#notation[
+  / DFT: 密度泛函理论 (Density functional theory)
+  / DMRG: 密度矩阵重正化群密度矩阵重正化群密度矩阵重正化群 (Density-Matrix Reformation-Group)
+]
 
 = 基本功能
 

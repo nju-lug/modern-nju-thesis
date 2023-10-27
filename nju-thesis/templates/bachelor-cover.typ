@@ -1,5 +1,5 @@
 #import "@preview/t4t:0.3.2": is
-#import "@preview/tablex:0.0.6": gridx, colspanx
+#import "../utils/custom-tablex.typ": gridx, colspanx
 #import "../utils/datetime-display.typ": datetime-display
 #import "../utils/style.typ": 字号, 字体
 

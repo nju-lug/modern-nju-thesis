@@ -9,6 +9,7 @@
 #import "templates/bachelor-abstract.typ": bachelor-abstract
 #import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
 #import "templates/bachelor-outline-page.typ": bachelor-outline-page
+#import "templates/notation.typ": notation
 #import "templates/acknowledgement.typ": acknowledgement
 #import "utils/custom-numbering.typ": custom-numbering
 #import "utils/custom-tablex.typ": *
@@ -130,6 +131,11 @@
       bachelor-outline-page(
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),
+      )
+    },
+    notation: (..args) => {
+      notation(
+        ..args,
       )
     },
     acknowledgement: (..args) => {
