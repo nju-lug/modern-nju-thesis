@@ -14,9 +14,9 @@
   let display-font(cjk-name, latin-name) = [
     #set text(font: fonts.at(cjk-name))
 
-    #cjk-name (#latin-name CJK Normal): 落霞与孤鹜齐飞，秋水共长天一色。
+    #cjk-name (#latin-name CJK Regular): 落霞与孤鹜齐飞，秋水共长天一色。
 
-    #cjk-name (#latin-name Latin Normal): The fanfare of birds announces the morning.
+    #cjk-name (#latin-name Latin Regular): The fanfare of birds announces the morning.
     
     *#cjk-name (#latin-name CJK Bold): 落霞与孤鹜齐飞，秋水共长天一色。*
 
