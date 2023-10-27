@@ -2,7 +2,6 @@
 #import "../utils/indent.typ": indent
 #import "../utils/style.typ": 字号, 字体
 
-// 封面
 #let bachelor-decl-page(
   fonts: (:),
   info: (:),

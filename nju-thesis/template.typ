@@ -9,6 +9,7 @@
 #import "templates/bachelor-abstract.typ": bachelor-abstract
 #import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
 #import "templates/bachelor-outline-page.typ": bachelor-outline-page
+#import "templates/acknowledgement.typ": acknowledgement
 #import "utils/custom-numbering.typ": custom-numbering
 #import "utils/indent.typ": indent
 #import "utils/style.typ": 字体
@@ -125,6 +126,12 @@
       bachelor-outline-page(
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),
+      )
+    },
+    acknowledgement: (..args) => {
+      acknowledgement(
+        anonymous: anonymous,
+        ..args,
       )
     },
   )

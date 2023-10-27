@@ -3,7 +3,7 @@
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,
   fonts-display-page,
-  cover, decl-page, abstract, abstract-en, outline-page,
+  cover, decl-page, abstract, abstract-en, outline-page, acknowledgement,
 ) = documentclass(
   // anonymous: true,  // 盲审模式
   // 可自定义字体，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
@@ -91,6 +91,10 @@
 #("正文内容" * 20)
 
 #("正文内容" * 20)
+
+#acknowledgement[
+  致谢内容
+]
 
 // 正文结束标志，不可缺少
 #mainmatter-end()
