@@ -1,6 +1,7 @@
 #import "@preview/outrageous:0.1.0"
 #import "../utils/style.typ": 字号, 字体
 
+// 本科生目录生成
 #let bachelor-outline-page(
   // documentclass 传入参数
   fonts: (:),

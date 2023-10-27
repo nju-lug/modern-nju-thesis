@@ -3,7 +3,7 @@
 #import "../utils/datetime-display.typ": datetime-display
 #import "../utils/style.typ": 字号, 字体
 
-// 封面
+// 本科生封面
 #let bachelor-cover(
   // documentclass 传入的参数
   anonymous: false,

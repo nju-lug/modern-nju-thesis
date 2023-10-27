@@ -1,7 +1,7 @@
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/hline.typ": hline
 
-// 封面
+// 字体显示测试页
 #let fonts-display-page(
   fonts: (:),
   size: 字号.小四,

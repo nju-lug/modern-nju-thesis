@@ -1,3 +1,7 @@
+// author: RubixDev@GitHub
+// 这份代码是我根据 i-figured 包修改而来的，
+// 用于处理数学公式的编码，用法与 i-figured 基本一致
+
 #let reset-counters(it, level: 1) = {
   if it.level <= level {
     counter(math.equation).update(0)

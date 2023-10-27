@@ -1,5 +1,6 @@
 #import "../utils/custom-numbering.typ": custom-numbering
 
+// 后记，重置 heading 计数器
 #let appendix(
   numbering: custom-numbering.with(first-level: "附录 A ", depth: 3, "A.1 "),
   it,

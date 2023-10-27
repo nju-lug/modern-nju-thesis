@@ -4,6 +4,7 @@
 #import "../utils/double-underline.typ": double-underline
 #import "../utils/invisible-heading.typ": invisible-heading
 
+// 本科生中文摘要页
 #let bachelor-abstract(
   // documentclass 传入的参数
   anonymous: false,

@@ -25,6 +25,10 @@
   heading-bottom-vspace: (20pt, 12pt),
   heading-pagebreak: (true, false),
   heading-align: (center, auto),
+  // figure 计数
+  show-figure: i-figured.show-figure,
+  // equation 计数
+  show-equation: i-equation.show-equation,
   ..args,
   it,
 ) = {
@@ -63,7 +67,7 @@
   show footnote.entry: set text(font: fonts.宋体, size: 字号.五号)
   // 3.3 设置 figure 的编号
   show heading: i-figured.reset-counters
-  show figure: i-figured.show-figure
+  show figure: show-figure
   // 3.4 表格表头置顶 + 不用冒号用空格分割
   show figure.where(
     kind: table
@@ -71,7 +75,7 @@
   set figure.caption(separator: "  ")
   // 3.5 设置 equation 的编号
   show heading: i-equation.reset-counters
-  show math.equation: i-equation.show-equation
+  show math.equation: show-equation
 
   // 4.  处理标题
   // 4.1 设置标题的 Numbering

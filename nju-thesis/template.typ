@@ -13,6 +13,8 @@
 #import "utils/custom-numbering.typ": custom-numbering
 #import "utils/custom-tablex.typ": *
 #import "utils/indent.typ": indent
+#import "@preview/i-figured:0.1.0": show-figure
+#import "utils/i-equation.typ": show-equation
 #import "utils/style.typ": 字体
 #import "utils/style.typ": 字号
 

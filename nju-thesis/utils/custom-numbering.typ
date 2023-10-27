@@ -1,3 +1,5 @@
+// 一个简单的自定义 Numbering
+// 用法也简单，可以特殊设置一级等标题的样式，以及一个缺省值
 #let custom-numbering(base: 1, depth: 5, first-level: auto, second-level: auto, third-level: auto, format, ..args) = {
   if (args.pos().len() > depth) {
     return
