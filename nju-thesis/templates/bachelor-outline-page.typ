@@ -7,6 +7,7 @@
   // 其他参数
   depth: 3,
   title: "目　　录",
+  outlined: true,
   title-vspace: 50pt,
   title-text-args: auto,
   // 引用页数的字体，这里用于显示 Times New Roman
@@ -45,7 +46,7 @@
   {
     set align(center)
     set text(..title-text-args)
-    heading(level: 1, title)
+    heading(level: 1, outlined: outlined, title)
   }
 
   v(title-vspace)
