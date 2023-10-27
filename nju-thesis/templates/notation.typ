@@ -2,6 +2,7 @@
 #import "../utils/custom-tablex.typ": gridx
 
 #let notation(
+  twoside: false,
   title: "符号表",
   outlined: true,
   width: 360pt,
@@ -29,4 +30,9 @@
         .flatten()
     )
   ))
+
+  // 手动分页
+  if (twoside) {
+    pagebreak() + " "
+  }
 }

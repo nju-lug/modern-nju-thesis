@@ -22,7 +22,7 @@
 #let documentclass(
   type: "bachelor",  // TODO: 
   degree: "academic",  // TODO: 
-  twoside: true,  // TODO: 双面模式，会加入空白页，便于打印
+  twoside: false,  // 双面模式，会加入空白页，便于打印
   anonymous: false,  // 盲审模式
   fonts: (:),  // 字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   math-font: auto,  // TODO: 
@@ -92,6 +92,7 @@
     },
     fonts-display-page: (..args) => {
       fonts-display-page(
+        twoside: twoside,
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),
       )
@@ -99,6 +100,7 @@
     cover: (..args) => {
       bachelor-cover(
         anonymous: anonymous,
+        twoside: twoside,
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),
         info: info + args.named().at("info", default: (:)),
@@ -106,6 +108,7 @@
     },
     decl-page: (..args) => {
       bachelor-decl-page(
+        twoside: twoside,
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),
         info: info + args.named().at("info", default: (:)),
@@ -114,6 +117,7 @@
     abstract: (..args) => {
       bachelor-abstract(
         anonymous: anonymous,
+        twoside: twoside,
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),
         info: info + args.named().at("info", default: (:)),
@@ -122,6 +126,7 @@
     abstract-en: (..args) => {
       bachelor-abstract-en(
         anonymous: anonymous,
+        twoside: twoside,
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),
         info: info + args.named().at("info", default: (:)),
@@ -129,18 +134,21 @@
     },
     outline-page: (..args) => {
       bachelor-outline-page(
+        twoside: twoside,
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),
       )
     },
     notation: (..args) => {
       notation(
+        twoside: twoside,
         ..args,
       )
     },
     acknowledgement: (..args) => {
       acknowledgement(
         anonymous: anonymous,
+        twoside: twoside,
         ..args,
       )
     },

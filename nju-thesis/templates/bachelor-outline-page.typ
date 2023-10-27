@@ -5,6 +5,7 @@
 // 本科生目录生成
 #let bachelor-outline-page(
   // documentclass 传入参数
+  twoside: false,
   fonts: (:),
   // 其他参数
   depth: 3,
@@ -40,7 +41,7 @@
   }
 
   // 2.  正式渲染
-  pagebreak(weak: true)
+  pagebreak(weak: true, to: if twoside { "odd" })
 
   // 默认显示的字体
   set text(font: reference-font, size: reference-size)
@@ -75,4 +76,9 @@
 
   // 显示目录
   outline(title: none, depth: depth)
+
+  // 手动分页
+  if (twoside) {
+    pagebreak() + " "
+  }
 }

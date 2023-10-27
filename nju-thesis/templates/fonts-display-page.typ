@@ -3,6 +3,7 @@
 
 // 字体显示测试页
 #let fonts-display-page(
+  twoside: false,
   fonts: (:),
   size: 字号.小四,
   lang: "zh",
@@ -24,7 +25,7 @@
   ]
 
   // 3. 正式渲染
-  pagebreak(weak: true)
+  pagebreak(weak: true, to: if twoside { "odd" })
   set text(size: size, lang: lang)
 
   [

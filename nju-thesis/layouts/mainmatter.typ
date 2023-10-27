@@ -97,10 +97,13 @@
     v(array-at(heading-bottom-vspace, it.level))
     fake-par
   }
-  // 4.3 标题居中与换页
+  // 4.3 标题居中与自动换页
   show heading: it => {
     if (array-at(heading-pagebreak, it.level)) {
-      pagebreak(weak: true)
+      // 如果打上了 no-auto-pagebreak 标签，则不自动换页
+      if ("label" not in it.fields() or str(it.label) != "no-auto-pagebreak") {
+        pagebreak(weak: true)
+      }
     }
     if (array-at(heading-align, it.level) != auto) {
       set align(array-at(heading-align, it.level))

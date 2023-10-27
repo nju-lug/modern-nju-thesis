@@ -4,6 +4,7 @@
 
 // 本科生声明页
 #let bachelor-decl-page(
+  twoside: false,
   fonts: (:),
   info: (:),
 ) = {
@@ -21,7 +22,7 @@
 
 
   // 3.  正式渲染
-  pagebreak(weak: true)
+  pagebreak(weak: true, to: if twoside { "odd" })
 
   v(12pt)
 

@@ -1,10 +1,15 @@
 #import "nju-thesis/template.typ": documentclass, tablex, fig, tlt, indent
 
+// 双面模式，会加入空白页，便于打印
+// #let twoside = true
+#let twoside = false
+
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,
   fonts-display-page, cover, decl-page, abstract, abstract-en, outline-page, notation, acknowledgement,
 ) = documentclass(
   // anonymous: true,  // 盲审模式
+  twoside: twoside,  // 双面模式，会加入空白页，便于打印
   // 可自定义字体，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   // fonts: (楷体: ("Times New Roman", "FZKai-Z03S")),
   info: (
@@ -81,14 +86,14 @@
   - 无序子列表项一
   - 无序子列表项二
 
-== 有序列表
+=== 有序列表
 
 + 有序列表项一
 + 有序列表项二
   + 有序子列表项一
   + 有序子列表项二
 
-== 术语列表
+=== 术语列表
 
 / 术语一: 术语解释
 / 术语二: 术语解释
@@ -165,6 +170,10 @@ def add(x, y):
 正文内容
 
 
+// 手动分页
+#if (twoside) {
+  pagebreak() + " "
+}
 // 参考文献
 #bibliography(("bibs/ex01.bib", "bibs/ex02.bib"),
   style: "ieee"
@@ -176,9 +185,13 @@ def add(x, y):
   致谢内容
 ]
 
+// 手动分页
+#if (twoside) {
+  pagebreak() + " "
+}
+
 // 正文结束标志，不可缺少
 #mainmatter-end()
-
 
 // 附录
 #show: appendix
