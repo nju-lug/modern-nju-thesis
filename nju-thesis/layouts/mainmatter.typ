@@ -21,8 +21,8 @@
   heading-font: auto,
   heading-size: (字号.四号,),
   heading-weight: ("regular",),
-  heading-top-vspace: (20pt, 0pt),
-  heading-bottom-vspace: (20pt, 12pt),
+  heading-top-vspace: (20pt, 4pt),
+  heading-bottom-vspace: (20pt, 8pt),
   heading-pagebreak: (true, false),
   heading-align: (center, auto),
   // figure 计数
@@ -84,6 +84,7 @@
   show heading: it => {
     set text(
       font: array-at(heading-font, it.level),
+      size: array-at(heading-size, it.level),
       weight: array-at(heading-weight, it.level),
       ..unpairs(heading-text-args-lists
         .map((pair) => (pair.at(0), array-at(pair.at(1), it.level))))
