@@ -29,6 +29,8 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 ## 使用
 
+快速浏览效果: 查看 [thesis.pdf](https://github.com/OrangeX4/nju-thesis-typst/blob/main/thesis.pdf)，样例论文源码：查看 [thesis.typ](https://github.com/OrangeX4/nju-thesis-typst/blob/main/thesis.typ)
+
 ### 在线编辑
 
 Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑：https://typst.app/project/rgiwHIjdPOnXr9HJb8H0oa
