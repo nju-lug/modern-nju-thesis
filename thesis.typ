@@ -145,4 +145,9 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
 === 附录子子标题
 
-附录内容
+附录内容，这里也可以加入图片，例如@fig:appendix-img。
+
+#fig(
+  image("nju-thesis/assets/vi/nju-emblem.svg", width: 20%),
+  caption: [图片测试],
+) <appendix-img>
