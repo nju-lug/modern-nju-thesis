@@ -31,6 +31,10 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 快速浏览效果: 查看 [thesis.pdf](https://github.com/OrangeX4/nju-thesis-typst/blob/main/thesis.pdf)，样例论文源码：查看 [thesis.typ](https://github.com/OrangeX4/nju-thesis-typst/blob/main/thesis.typ)
 
+**你只需要修改根目录下的 `thesis.typ` 文件即可，基本可以满足你的所有需求，`nju-thesis` 目录下的代码可以用于参数查阅，但是理论上你不应该对其进行更改。**
+
+如果你认为不能满足你的需求，可以先查阅后面的 [Q&A](#Q-&-A) 部分。
+
 ### 在线编辑
 
 Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑：https://typst.app/project/rgiwHIjdPOnXr9HJb8H0oa
@@ -91,7 +95,7 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 
 
-## Q&A
+## Q & A
 
 ### 我不会 LaTeX，可以用这个模板写论文吗？
 
