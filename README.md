@@ -159,7 +159,7 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 ### 目前 Typst 有哪些第三方包和模板？
 
-可以参考 [第三方包](https://typst-doc-cn.github.io/docs/packages/)、[Awesome Typst Links](https://github.com/qjcg/awesome-typst) 和 [Awesome Typst 列表中文版](https://github.com/typst-cn/awesome-typst-cn)。
+可以参考 [第三方包](https://typst-doc-cn.github.io/docs/packages/)、[Awesome Typst Links](https://github.com/qjcg/awesome-typst) 和 [Awesome Typst 列表中文版](https://github.com/typst-doc-cn/awesome-typst-cn)。
 
 
 ### 为什么只有一个 thesis.typ 文件，没有按章节分多个文件？
