@@ -17,9 +17,12 @@
   leading-zero: true,
   numbering: "(1.1)",
   prefix: "eqt:",
-  numbering-none-label: "-",
+  only-labeled: false,
+  unnumbered-label: "-",
 ) = {
-  if "label" in it.fields() and (str(it.label).starts-with(prefix) or str(it.label) == numbering-none-label) {
+  if (only-labeled and "label" not in it.fields()) {
+    it
+  } else if "label" in it.fields() and (str(it.label).starts-with(prefix) or str(it.label) == unnumbered-label) {
     it
   } else {
     let numbers = counter(heading).at(it.location())
