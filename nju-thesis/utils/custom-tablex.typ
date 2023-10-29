@@ -17,7 +17,10 @@
 
 // 三线表，包含居中，使用 tablex 实现
 #let tlt(..args) = tablex(
-  auto-vlines: false,
+  auto-lines: false,
   align: center + horizon,
+  hlinex(y: 0),
+  hlinex(y: 1),
   ..args,
+  hlinex(),
 )
