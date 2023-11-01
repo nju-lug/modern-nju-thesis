@@ -14,6 +14,8 @@
 #import "templates/bachelor-abstract.typ": bachelor-abstract
 #import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
 #import "templates/bachelor-outline-page.typ": bachelor-outline-page
+#import "templates/list-of-figures.typ": list-of-figures
+#import "templates/list-of-tables.typ": list-of-tables
 #import "templates/notation.typ": notation
 #import "templates/acknowledgement.typ": acknowledgement
 #import "utils/custom-numbering.typ": custom-numbering
@@ -139,6 +141,20 @@
     },
     outline-page: (..args) => {
       bachelor-outline-page(
+        twoside: twoside,
+        ..args,
+        fonts: fonts + args.named().at("fonts", default: (:)),
+      )
+    },
+    list-of-figures: (..args) => {
+      list-of-figures(
+        twoside: twoside,
+        ..args,
+        fonts: fonts + args.named().at("fonts", default: (:)),
+      )
+    },
+    list-of-tables: (..args) => {
+      list-of-tables(
         twoside: twoside,
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),

@@ -1,29 +1,27 @@
+#import "@preview/i-figured:0.1.0"
 #import "@preview/outrageous:0.1.0"
 #import "../utils/invisible-heading.typ": invisible-heading
 #import "../utils/style.typ": 字号, 字体
 
-// 本科生目录生成
-#let bachelor-outline-page(
+// 表格目录生成
+#let list-of-tables(
   // documentclass 传入参数
   twoside: false,
   fonts: (:),
   // 其他参数
-  depth: 3,
-  title: "目　　录",
+  title: "表格目录",
   outlined: true,
   title-vspace: 32pt,
   title-text-args: auto,
-  // 引用页数的字体，这里用于显示 Times New Roman
-  reference-font: auto,
-  reference-size: 字号.小四,
+  // caption 的 separator
+  separator: "  ",
   // 字体与字号
   font: auto,
-  size: (字号.四号, 字号.小四),
+  size: 字号.小四,
   // 垂直间距
-  vspace: (25pt, 14pt),
-  indent: (0pt, 18pt, 28pt),
-  // 一级标题不显示点号
-  fill: (none, auto),
+  vspace: 14pt,
+  // 是否显示点号
+  fill: auto,
   ..args,
 ) = {
   // 1.  默认参数
@@ -31,20 +29,16 @@
   if (title-text-args == auto) {
     title-text-args = (font: fonts.宋体, size: 字号.三号, weight: "bold")
   }
-  // 引用页数的字体，这里用于显示 Times New Roman
-  if (reference-font == auto) {
-    reference-font = fonts.宋体
-  }
   // 字体与字号
   if (font == auto) {
-    font = (fonts.黑体, fonts.宋体)
+    font = fonts.宋体
   }
 
   // 2.  正式渲染
   pagebreak(weak: true, to: if twoside { "odd" })
 
   // 默认显示的字体
-  set text(font: reference-font, size: reference-size)
+  set text(font: font, size: size)
 
   {
     set align(center)
@@ -59,22 +53,22 @@
     // 保留 Typst 基础样式
     ..outrageous.presets.typst,
     body-transform: (level, it) => {
-      // 设置字体和字号
-      set text(
-        font: font.at(calc.min(level, font.len()) - 1),
-        size: size.at(calc.min(level, size.len()) - 1),
-      )
-      // 计算缩进
-      let indent-list = indent + range(level - indent.len()).map((it) => indent.last())
-      let indent-length = indent-list.slice(0, count: level).sum()
-      h(indent-length) + it
+      // 因为好像没找到 separator 的参数，所以这里就手动寻找替换了
+      if (it.has("children") and it.children.at(3, default: none) == [#": "]) {
+        it.children.slice(0, 3).sum() + separator + it.children.slice(4).sum()
+      } else {
+        it
+      }
     },
-    vspace: vspace,
-    fill: fill,
-    ..args,
+    vspace: (vspace,),
+    fill: (fill,),
   )
 
   // 显示目录
-  outline(title: none, depth: depth)
+  i-figured.outline(target-kind: table, title: none)
 
+  // 手动分页
+  if (twoside) {
+    pagebreak() + " "
+  }
 }

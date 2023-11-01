@@ -25,6 +25,8 @@
   heading-bottom-vspace: (20pt, 8pt),
   heading-pagebreak: (true, false),
   heading-align: (center, auto),
+  // caption 的 separator
+  separator: "  ",
   // figure 计数
   show-figure: i-figured.show-figure,
   // equation 计数
@@ -72,7 +74,7 @@
   show figure.where(
     kind: table
   ): set figure.caption(position: top)
-  set figure.caption(separator: "  ")
+  set figure.caption(separator: separator)
   // 3.5 设置 equation 的编号
   show heading: i-equation.reset-counters
   show math.equation.where(block: true): show-equation
