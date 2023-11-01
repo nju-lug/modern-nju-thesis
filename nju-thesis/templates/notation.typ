@@ -1,13 +1,12 @@
 #import "@preview/t4t:0.3.2": is
-#import "../utils/custom-tablex.typ": gridx
 
 #let notation(
   twoside: false,
   title: "符号表",
   outlined: true,
-  width: 360pt,
+  width: 350pt,
   columns: (60pt, 1fr),
-  row-gutter: 4pt,
+  row-gutter: 16pt,
   ..args,
   body,
 ) = {
@@ -19,7 +18,7 @@
   )
 
   align(center, block(width: width,
-    gridx(
+    align(start, grid(
       columns: columns,
       row-gutter: row-gutter,
       ..args,
@@ -28,7 +27,7 @@
         .filter(it => is.elem(terms.item, it))
         .map(it => (it.term, it.description))
         .flatten()
-    )
+    ))
   ))
 
   // 手动分页
