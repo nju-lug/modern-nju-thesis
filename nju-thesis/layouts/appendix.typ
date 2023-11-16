@@ -1,5 +1,4 @@
-#import "@preview/i-figured:0.1.0"
-#import "../utils/i-equation.typ"
+#import "@preview/i-figured:0.2.0"
 #import "../utils/custom-numbering.typ": custom-numbering
 
 // 后记，重置 heading 计数器
@@ -8,7 +7,7 @@
   // figure 计数
   show-figure: i-figured.show-figure.with(numbering: "A.1"),
   // equation 计数
-  show-equation: i-equation.show-equation.with(numbering: "(A.1)"),
+  show-equation: i-figured.show-equation.with(numbering: "(A.1)"),
   it,
 ) = {
   set heading(numbering: numbering)

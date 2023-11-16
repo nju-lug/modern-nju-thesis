@@ -1,6 +1,5 @@
 #import "@preview/anti-matter:0.0.2": anti-front-end
-#import "@preview/i-figured:0.1.0"
-#import "../utils/i-equation.typ"
+#import "@preview/i-figured:0.2.0"
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/custom-numbering.typ": custom-numbering
 #import "../utils/indent.typ": fake-par
@@ -28,7 +27,7 @@
   // figure 计数
   show-figure: i-figured.show-figure,
   // equation 计数
-  show-equation: i-equation.show-equation,
+  show-equation: i-figured.show-equation,
   ..args,
   it,
 ) = {
@@ -68,14 +67,13 @@
   // 3.3 设置 figure 的编号
   show heading: i-figured.reset-counters
   show figure: show-figure
-  // 3.4 表格表头置顶 + 不用冒号用空格分割
+  // 3.4 设置 equation 的编号
+  show math.equation.where(block: true): show-equation
+  // 3.5 表格表头置顶 + 不用冒号用空格分割
   show figure.where(
     kind: table
   ): set figure.caption(position: top)
   set figure.caption(separator: "  ")
-  // 3.5 设置 equation 的编号
-  show heading: i-equation.reset-counters
-  show math.equation.where(block: true): show-equation
   // 3.6 优化列表显示
   //     术语列表 terms 不应该缩进
   show terms: set par(first-line-indent: 0pt)

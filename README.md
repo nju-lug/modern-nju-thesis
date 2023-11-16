@@ -233,7 +233,7 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 ### 内部目录
 
 - `utils` 目录: 包含了模板使用到的各种自定义辅助函数，存放没有外部依赖，且 **不会渲染出页面的函数**。
-  - `i-equation.typ` 文件: 模仿 [i-figured](https://github.com/typst/packages/tree/main/packages/preview/i-figured/0.1.0) 包编写的数学公式编号函数。
+  - <del>`i-equation.typ` 文件: 模仿 [i-figured](https://github.com/typst/packages/tree/main/packages/preview/i-figured/0.1.0) 包编写的数学公式编号函数。</del> 已经合并至 [i-figured](https://github.com/typst/packages/tree/main/packages/preview/i-figured/0.2.0).
 - `templates` 目录: 包含了模板用到的各个 **独立页面**，例如封面页、声明页、摘要等，即 **会渲染出不影响其他页面的独立页面的函数**。
 - `layouts` 目录: 布局目录，存放着用于排篇布局的、应用于 `show` 指令的、**横跨多个页面的函数**，例如为了给页脚进行罗马数字编码的前言 `preface` 函数。
   - 主要分成了 `doc` 文稿、`preface` 前言、`mainmatter` 正文与 `appendix` 附录/后记。
