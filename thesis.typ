@@ -6,7 +6,7 @@
 
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,
-  fonts-display-page, cover, decl-page, abstract, abstract-en, outline-page, notation, acknowledgement,
+  fonts-display-page, cover, decl-page, abstract, abstract-en, outline-page, list-of-figures, list-of-tables, notation, acknowledgement,
 ) = documentclass(
   // anonymous: true,  // 盲审模式
   twoside: twoside,  // 双面模式，会加入空白页，便于打印
@@ -61,6 +61,12 @@
 
 // 目录
 #outline-page()
+
+// 插图目录
+#list-of-figures()
+
+// 表格目录
+#list-of-tables()
 
 // 正文
 #show: mainmatter
