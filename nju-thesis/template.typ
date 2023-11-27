@@ -21,7 +21,7 @@
 #import "utils/custom-numbering.typ": custom-numbering
 #import "utils/custom-tablex.typ": *
 #import "utils/indent.typ": indent
-#import "@preview/i-figured:0.2.0": show-figure, show-equation
+#import "@preview/i-figured:0.2.1": show-figure, show-equation
 #import "utils/style.typ": 字体
 #import "utils/style.typ": 字号
 

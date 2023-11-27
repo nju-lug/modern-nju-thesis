@@ -1,5 +1,5 @@
 #import "@preview/anti-matter:0.0.2": anti-front-end
-#import "@preview/i-figured:0.2.0"
+#import "@preview/i-figured:0.2.1"
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/custom-numbering.typ": custom-numbering
 #import "../utils/indent.typ": fake-par

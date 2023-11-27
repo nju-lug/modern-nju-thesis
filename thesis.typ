@@ -175,6 +175,8 @@ def add(x, y):
 
 正文内容
 
+$ x $
+
 
 // 手动分页
 #if (twoside) {
