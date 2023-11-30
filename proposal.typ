@@ -3,6 +3,8 @@
 
 #let table-stroke = 0.5pt
 
+#set page(numbering: "1")
+
 #align(center, text(
   font: 字体.黑体,
   size: 字号.三号,
