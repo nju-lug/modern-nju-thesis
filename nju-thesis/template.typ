@@ -25,6 +25,7 @@
 #import "utils/style.typ": 字体
 #import "utils/style.typ": 字号
 
+// 使用函数闭包特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `templates` 内部函数。
 #let documentclass(
   type: "bachelor",  // TODO: "bachelor" | "master" | "doctor" | "postdoc", 文档类型，默认为本科生学士 bachelor
   degree: "academic",  // TODO: "academic" | "professional", 学位类型，默认为学术型 academic

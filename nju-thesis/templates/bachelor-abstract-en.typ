@@ -15,7 +15,7 @@
   keywords: (),
   outline-title: "ABSTRACT",
   outlined: true,
-  anonymous-info-keys: ("author-en", "supervisor-en"),
+  anonymous-info-keys: ("author-en", "supervisor-en", "supervisor-ii-en"),
   leading: 1.28em,
   spacing: 1.28em,
   body,
@@ -70,7 +70,7 @@
 
     UNDERGRADUATE: #info-value("author-en", info.author-en)
 
-    MENTOR: #info-value("supervisor-en", info.supervisor-en.at(1) + " " + info.supervisor-en.at(0))
+    MENTOR: #info-value("supervisor-en", info.supervisor-en.at(1) + " " + info.supervisor-en.at(0)) #h(1em) #info-value("supervisor-ii-en", info.supervisor-ii-en.at(1) + " " + info.supervisor-ii-en.at(0))
 
     ABSTRACT:
 

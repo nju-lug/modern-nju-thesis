@@ -16,7 +16,7 @@
   info-key-width: 74pt,
   column-gutter: -8pt,
   row-gutter: 1pt,
-  anonymous-info-keys: ("grade", "student-id", "author", "supervisor"),
+  anonymous-info-keys: ("grade", "student-id", "author", "supervisor", "supervisor-ii"),
   bold-info-keys: ("title",),
   bold-level: "bold",
   datetime-display: datetime-display,
@@ -146,6 +146,12 @@
     info-short-value("supervisor", info.supervisor.at(0)),
     info-key("职　　称"),
     info-short-value("supervisor", info.supervisor.at(1)),
+    ..(if info.supervisor-ii != () {(
+      info-key("第二导师"),
+      info-short-value("supervisor-ii", info.supervisor-ii.at(0)),
+      info-key("职　　称"),
+      info-short-value("supervisor-ii", info.supervisor-ii.at(1)),
+    )} else {()}),
     info-key("提交日期"),
     info-long-value("submit", info.submit-date),
   ))
