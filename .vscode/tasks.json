@@ -4,7 +4,7 @@
         {
             "label": "typst compile",
             "type": "shell",
-            "command": "typst compile --root \"${fileDirname}\" \"${file}\"",
+            "command": "typst compile --root \"${workspaceFolder}\" \"${file}\"",
             "presentation": {
                 "echo": false,
                 "reveal": "never",

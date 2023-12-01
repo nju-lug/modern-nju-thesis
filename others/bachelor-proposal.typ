@@ -1,5 +1,5 @@
 #import "@preview/tablex:0.0.6": *
-#import "nju-thesis/utils/style.typ": 字体, 字号
+#import "style.typ": 字体, 字号
 
 #let table-stroke = 0.5pt
 
