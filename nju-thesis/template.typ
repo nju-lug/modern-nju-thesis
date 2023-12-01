@@ -26,12 +26,11 @@
 #import "utils/style.typ": 字号
 
 #let documentclass(
-  type: "bachelor",  // TODO: 
-  degree: "academic",  // TODO: 
+  type: "bachelor",  // TODO: "bachelor" | "master" | "doctor" | "postdoc", 文档类型，默认为本科生学士 bachelor
+  degree: "academic",  // TODO: "academic" | "professional", 学位类型，默认为学术型 academic
   twoside: false,  // 双面模式，会加入空白页，便于打印
   anonymous: false,  // 盲审模式
   fonts: (:),  // 字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
-  math-font: auto,  // TODO: 
   info: (:),
 ) = {
   // 默认参数
