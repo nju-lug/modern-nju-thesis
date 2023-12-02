@@ -14,6 +14,7 @@
 #import "templates/bachelor-decl-page.typ": bachelor-decl-page
 #import "templates/master-decl-page.typ": master-decl-page
 #import "templates/bachelor-abstract.typ": bachelor-abstract
+#import "templates/master-abstract.typ": master-abstract
 #import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
 #import "templates/bachelor-outline-page.typ": bachelor-outline-page
 #import "templates/list-of-figures.typ": list-of-figures
@@ -153,13 +154,27 @@
       }
     },
     abstract: (..args) => {
-      bachelor-abstract(
-        anonymous: anonymous,
-        twoside: twoside,
-        ..args,
-        fonts: fonts + args.named().at("fonts", default: (:)),
-        info: info + args.named().at("info", default: (:)),
-      )
+      if type == "master" or type == "doctor" {
+        master-abstract(
+          type: type,
+          degree: degree,
+          anonymous: anonymous,
+          twoside: twoside,
+          ..args,
+          fonts: fonts + args.named().at("fonts", default: (:)),
+          info: info + args.named().at("info", default: (:)),
+        )
+      } else if type == "postdoc" {
+        panic("postdoc has not yet been implemented.")
+      } else {
+        bachelor-abstract(
+          anonymous: anonymous,
+          twoside: twoside,
+          ..args,
+          fonts: fonts + args.named().at("fonts", default: (:)),
+          info: info + args.named().at("info", default: (:)),
+        )
+      }
     },
     abstract-en: (..args) => {
       bachelor-abstract-en(
