@@ -4,10 +4,16 @@
 
 // 本科生声明页
 #let bachelor-decl-page(
+  anonymous: false,
   twoside: false,
   fonts: (:),
   info: (:),
 ) = {
+  // 0. 如果需要匿名则短路返回
+  if anonymous {
+    return
+  }
+
   // 1.  默认参数
   fonts = 字体 + fonts
   info = (
