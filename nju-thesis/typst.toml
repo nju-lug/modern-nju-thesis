@@ -1,6 +1,6 @@
 [package]
 name = "nju-thesis"
-version = "0.1.0"
+version = "0.2.0"
 entrypoint = "template.typ"
 authors = ["OrangeX4"]
 license = "MIT"

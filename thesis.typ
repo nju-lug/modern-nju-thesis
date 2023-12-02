@@ -8,7 +8,7 @@
   doc, preface, mainmatter, mainmatter-end, appendix,
   fonts-display-page, cover, decl-page, abstract, abstract-en, outline-page, list-of-figures, list-of-tables, notation, acknowledgement,
 ) = documentclass(
-  type: "master",  // "bachelor" | "master" | "doctor" | "postdoc", 文档类型，默认为本科生 bachelor
+  // type: "bachelor",  // "bachelor" | "master" | "doctor" | "postdoc", 文档类型，默认为本科生 bachelor
   // degree: "academic",  // "academic" | "professional", 学位类型，默认为学术型 academic
   // anonymous: true,  // 盲审模式
   twoside: twoside,  // 双面模式，会加入空白页，便于打印
