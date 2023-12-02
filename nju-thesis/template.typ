@@ -10,6 +10,7 @@
 #import "layouts/appendix.typ": appendix
 #import "templates/fonts-display-page.typ": fonts-display-page
 #import "templates/bachelor-cover.typ": bachelor-cover
+#import "templates/master-cover.typ": master-cover
 #import "templates/bachelor-decl-page.typ": bachelor-decl-page
 #import "templates/bachelor-abstract.typ": bachelor-abstract
 #import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
@@ -27,8 +28,9 @@
 
 // 使用函数闭包特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `templates` 内部函数。
 #let documentclass(
-  type: "bachelor",  // TODO: "bachelor" | "master" | "doctor" | "postdoc", 文档类型，默认为本科生学士 bachelor
-  degree: "academic",  // TODO: "academic" | "professional", 学位类型，默认为学术型 academic
+  type: "bachelor",  // "bachelor" | "master" | "doctor" | "postdoc"，文档类型，默认为本科生 bachelor
+  degree: "academic",  // "academic" | "professional"，学位类型，默认为学术型 academic
+  nl-cover: false,  // TODO: 是否使用国家图书馆封面，默认关闭
   twoside: false,  // 双面模式，会加入空白页，便于打印
   anonymous: false,  // 盲审模式
   fonts: (:),  // 字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
@@ -50,19 +52,21 @@
     field: "某方向",
     field-en: "XX Field",
     supervisor: ("李四", "教授"),
-    supervisor-en: ("Li Si", "Professor"),
+    supervisor-en: "Professor Li Si",
     supervisor-ii: (),
-    supervisor-ii-en: (),
+    supervisor-ii-en: "",
     submit-date: datetime.today(),
+    // 以下为研究生项
     defend-date: datetime.today(),
     confer-date: datetime.today(),
     bottom-date: datetime.today(),
-    chairman: (),
-    reviewer: (),
-    clc: "",
-    udc: "",
-    secret-level: "",
-    supervisor-contact: "",
+    chairman: "某某某 教授",
+    reviewer: ("某某某 教授", "某某某 教授"),
+    clc: "O643.12",
+    udc: "544.4",
+    secret-level: "公开",
+    supervisor-contact: "南京大学 江苏省南京市栖霞区仙林大道163号",
+    email: "xyz@smail.nju.edu.cn",
     school-code: "10284",
     degree: auto,
     degree-en: auto,
@@ -104,13 +108,28 @@
       )
     },
     cover: (..args) => {
-      bachelor-cover(
-        anonymous: anonymous,
-        twoside: twoside,
-        ..args,
-        fonts: fonts + args.named().at("fonts", default: (:)),
-        info: info + args.named().at("info", default: (:)),
-      )
+      if type == "master" or type == "doctor" {
+        master-cover(
+          type: type,
+          degree: degree,
+          nl-cover: nl-cover,
+          anonymous: anonymous,
+          twoside: twoside,
+          ..args,
+          fonts: fonts + args.named().at("fonts", default: (:)),
+          info: info + args.named().at("info", default: (:)),
+        )
+      } else if type == "postdoc" {
+        panic("postdoc has not yet been implemented.")
+      } else {
+        bachelor-cover(
+          anonymous: anonymous,
+          twoside: twoside,
+          ..args,
+          fonts: fonts + args.named().at("fonts", default: (:)),
+          info: info + args.named().at("info", default: (:)),
+        )
+      }
     },
     decl-page: (..args) => {
       bachelor-decl-page(

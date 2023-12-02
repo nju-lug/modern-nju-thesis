@@ -8,23 +8,25 @@
   doc, preface, mainmatter, mainmatter-end, appendix,
   fonts-display-page, cover, decl-page, abstract, abstract-en, outline-page, list-of-figures, list-of-tables, notation, acknowledgement,
 ) = documentclass(
-  // anonymous: true,  // 盲审模式
+  type: "master",  // "bachelor" | "master" | "doctor" | "postdoc", 文档类型，默认为本科生 bachelor
+  // degree: "academic",  // "academic" | "professional", 学位类型，默认为学术型 academic
+  anonymous: true,  // 盲审模式
   twoside: twoside,  // 双面模式，会加入空白页，便于打印
   // 可自定义字体，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   // fonts: (楷体: ("Times New Roman", "FZKai-Z03S")),
   info: (
-    title: ("基于 Typst 的", "南京大学学位论文"),
-    title-en: "NJU Thesis Template for Typst",
+    title: ("基于 Typst 的", "南京大学学位论文", "南京大学学位论文"),
+    title-en: "My Title in English",
     grade: "20XX",
     student-id: "1234567890",
     author: "张三",
-    author-en: "Zhang San",
+    author-en: "Ming Xing",
     department: "某学院",
-    department-en: "XX Department",
+    department-en: "School of Chemistry and Chemical Engineering",
     major: "某专业",
-    major-en: "XX Major",
+    major-en: "Chemistry",
     supervisor: ("李四", "教授"),
-    supervisor-en: ("Li Si", "Professor"),
+    supervisor-en: "Professor My Supervisor",
     submit-date: datetime.today(),
   ),
 )

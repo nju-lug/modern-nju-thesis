@@ -11,6 +11,7 @@
   fonts: (:),
   info: (:),
   // 其他参数
+  stoke-width: 0.5pt,
   min-title-lines: 2,
   info-inset: (x: 0pt, bottom: 1pt),
   info-key-width: 74pt,
@@ -61,7 +62,7 @@
     rect(
       width: 100%,
       inset: info-inset,
-      stroke: (bottom: 1pt + black),
+      stroke: (bottom: stoke-width + black),
       text(
         font: fonts.宋体,
         size: 字号.三号,
@@ -153,6 +154,6 @@
       info-short-value("supervisor-ii", info.supervisor-ii.at(1)),
     )} else {()}),
     info-key("提交日期"),
-    info-long-value("submit", info.submit-date),
+    info-long-value("submit-date", info.submit-date),
   ))
 }

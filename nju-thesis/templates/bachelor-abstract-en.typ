@@ -27,7 +27,7 @@
     author-en: "Zhang San",
     department-en: "XX Department",
     major-en: "XX Major",
-    supervisor-en: ("Li Si", "Professor"),
+    supervisor-en: "Professor Li Si",
   ) + info
 
   // 2.  对参数进行处理
@@ -70,7 +70,7 @@
 
     UNDERGRADUATE: #info-value("author-en", info.author-en)
 
-    MENTOR: #info-value("supervisor-en", info.supervisor-en.at(1) + " " + info.supervisor-en.at(0)) #(if info.supervisor-ii-en != () [#h(1em) #info-value("supervisor-ii-en", info.supervisor-ii-en.at(1) + " " + info.supervisor-ii-en.at(0))])
+    MENTOR: #info-value("supervisor-en", info.supervisor-en) #(if info.supervisor-ii-en != "" [#h(1em) #info-value("supervisor-ii-en", info.supervisor-ii-en)])
 
     ABSTRACT:
 
