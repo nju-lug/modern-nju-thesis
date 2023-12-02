@@ -21,6 +21,7 @@
   outlined: true,
   abstract-title-weight: "regular",
   stoke-width: 0.5pt,
+  info-value-align: center,
   info-inset: (x: 0pt, bottom: 0pt),
   info-key-width: 74pt,
   grid-inset: 0pt,
@@ -58,7 +59,7 @@
   }
 
   let info-value(key, body) = {
-    set align(center)
+    set align(info-value-align)
     rect(
       width: 100%,
       inset: info-inset,
