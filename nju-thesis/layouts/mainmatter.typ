@@ -8,6 +8,7 @@
 
 #let mainmatter(
   // documentclass 传入参数
+  twoside: false,
   fonts: (:),
   // 其他参数
   leading: 1.25em,
@@ -129,11 +130,14 @@
         // 5.2 如果当前页面没有一级标题，则渲染页眉
         if not skip-on-first-level or cur-heading == none {
           if header-render == auto {
+            // 一级标题和二级标题
+            let first-level-heading = if not twoside or calc.rem(loc.page(), 2) == 0 { heading-display(active-heading(level: 1, loc)) } else { "" }
+            let second-level-heading = if not twoside or calc.rem(loc.page(), 2) == 2 { heading-display(active-heading(level: 2, prev: false, loc)) } else { "" }
             set text(font: fonts.楷体, size: 字号.五号)
             stack(
-              heading-display(active-heading(level: 1, loc)) + h(1fr) + heading-display(active-heading(level: 2, prev: false, loc)),
+              first-level-heading + h(1fr) + second-level-heading,
               v(0.25em),
-              line(length: 100%, stroke: stroke-width + black),
+              if first-level-heading != "" or second-level-heading != "" { line(length: 100%, stroke: stroke-width + black) },
             )
           } else {
             header-render(loc)

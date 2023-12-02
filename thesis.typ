@@ -1,8 +1,8 @@
 #import "nju-thesis/template.typ": documentclass, tablex, fig, tlt, indent
 
 // 双面模式，会加入空白页，便于打印
-// #let twoside = true
 #let twoside = false
+// #let twoside = true
 
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,

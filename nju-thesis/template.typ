@@ -86,18 +86,21 @@
     },
     preface: (..args) => {
       preface(
+        twoside: twoside,
         ..args,
       )
     },
     mainmatter: (..args) => {
       if type == "master" or type == "doctor" {
         mainmatter(
+          twoside: twoside,
           display-header: true,
           ..args,
           fonts: fonts + args.named().at("fonts", default: (:)),
         )
       } else {
         mainmatter(
+          twoside: twoside,
           ..args,
           fonts: fonts + args.named().at("fonts", default: (:)),
         )
