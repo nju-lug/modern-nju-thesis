@@ -27,8 +27,8 @@
     major-en: "Chemistry",
     supervisor: ("李四", "教授"),
     supervisor-en: "Professor My Supervisor",
-    supervisor-ii: ("王五", "副教授"),
-    supervisor-ii-en: "Professor My Supervisor",
+    // supervisor-ii: ("王五", "副教授"),
+    // supervisor-ii-en: "Professor My Supervisor",
     submit-date: datetime.today(),
   ),
 )

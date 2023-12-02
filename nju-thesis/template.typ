@@ -16,6 +16,7 @@
 #import "templates/bachelor-abstract.typ": bachelor-abstract
 #import "templates/master-abstract.typ": master-abstract
 #import "templates/bachelor-abstract-en.typ": bachelor-abstract-en
+#import "templates/master-abstract-en.typ": master-abstract-en
 #import "templates/bachelor-outline-page.typ": bachelor-outline-page
 #import "templates/list-of-figures.typ": list-of-figures
 #import "templates/list-of-tables.typ": list-of-tables
@@ -75,6 +76,7 @@
   ) + info
 
   (
+    // 页面布局
     doc: (..args) => {
       doc(
         ..args,
@@ -102,6 +104,8 @@
         ..args,
       )
     },
+
+    // 字体展示页
     fonts-display-page: (..args) => {
       fonts-display-page(
         twoside: twoside,
@@ -109,6 +113,8 @@
         fonts: fonts + args.named().at("fonts", default: (:)),
       )
     },
+
+    // 封面页，通过 type 分发到不同函数
     cover: (..args) => {
       if type == "master" or type == "doctor" {
         master-cover(
@@ -133,6 +139,8 @@
         )
       }
     },
+
+    // 声明页，通过 type 分发到不同函数
     decl-page: (..args) => {
       if type == "master" or type == "doctor" {
         master-decl-page(
@@ -153,6 +161,8 @@
         )
       }
     },
+    
+    // 中文摘要页，通过 type 分发到不同函数
     abstract: (..args) => {
       if type == "master" or type == "doctor" {
         master-abstract(
@@ -176,15 +186,33 @@
         )
       }
     },
+
+    // 英文摘要页，通过 type 分发到不同函数
     abstract-en: (..args) => {
-      bachelor-abstract-en(
-        anonymous: anonymous,
-        twoside: twoside,
-        ..args,
-        fonts: fonts + args.named().at("fonts", default: (:)),
-        info: info + args.named().at("info", default: (:)),
-      )
+      if type == "master" or type == "doctor" {
+        master-abstract-en(
+          type: type,
+          degree: degree,
+          anonymous: anonymous,
+          twoside: twoside,
+          ..args,
+          fonts: fonts + args.named().at("fonts", default: (:)),
+          info: info + args.named().at("info", default: (:)),
+        )
+      } else if type == "postdoc" {
+        panic("postdoc has not yet been implemented.")
+      } else {
+        bachelor-abstract-en(
+          anonymous: anonymous,
+          twoside: twoside,
+          ..args,
+          fonts: fonts + args.named().at("fonts", default: (:)),
+          info: info + args.named().at("info", default: (:)),
+        )
+      }
     },
+
+    // 目录页
     outline-page: (..args) => {
       bachelor-outline-page(
         twoside: twoside,
@@ -192,6 +220,8 @@
         fonts: fonts + args.named().at("fonts", default: (:)),
       )
     },
+
+    // 插图目录页
     list-of-figures: (..args) => {
       list-of-figures(
         twoside: twoside,
@@ -199,6 +229,8 @@
         fonts: fonts + args.named().at("fonts", default: (:)),
       )
     },
+
+    // 表格目录页
     list-of-tables: (..args) => {
       list-of-tables(
         twoside: twoside,
@@ -206,12 +238,16 @@
         fonts: fonts + args.named().at("fonts", default: (:)),
       )
     },
+
+    // 符号表页
     notation: (..args) => {
       notation(
         twoside: twoside,
         ..args,
       )
     },
+
+    // 致谢页
     acknowledgement: (..args) => {
       acknowledgement(
         anonymous: anonymous,
