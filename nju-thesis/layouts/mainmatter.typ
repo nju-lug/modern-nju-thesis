@@ -2,6 +2,7 @@
 #import "@preview/i-figured:0.2.1"
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/custom-numbering.typ": custom-numbering
+#import "../utils/custom-heading.typ": heading-display, active-heading, current-heading
 #import "../utils/indent.typ": fake-par
 #import "../utils/unpairs.typ": unpairs
 
@@ -24,6 +25,12 @@
   heading-bottom-vspace: (20pt, 8pt),
   heading-pagebreak: (true, false),
   heading-align: (center, auto),
+  // 页眉
+  header-render: auto,
+  header-vspace: 0em,
+  display-header: false,
+  skip-on-first-level: true,
+  stroke-width: 0.5pt,
   // caption 的 separator
   separator: "  ",
   // figure 计数
@@ -112,6 +119,30 @@
       it
     }
   }
+
+  // 5.  处理页眉
+  set page(..(if display-header {
+    (
+      header: locate(loc => {
+        // 5.1 获取当前页面的一级标题
+        let cur-heading = current-heading(level: 1, loc)
+        // 5.2 如果当前页面没有一级标题，则渲染页眉
+        if not skip-on-first-level or cur-heading == none {
+          if header-render == auto {
+            set text(font: fonts.楷体, size: 字号.五号)
+            stack(
+              heading-display(active-heading(level: 1, loc)) + h(1fr) + heading-display(active-heading(level: 2, prev: false, loc)),
+              v(0.25em),
+              line(length: 100%, stroke: stroke-width + black),
+            )
+          } else {
+            header-render(loc)
+          }
+          v(header-vspace)
+        }
+      })
+    )
+  }))
 
   it
 }

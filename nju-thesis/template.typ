@@ -23,6 +23,7 @@
 #import "templates/notation.typ": notation
 #import "templates/acknowledgement.typ": acknowledgement
 #import "utils/custom-numbering.typ": custom-numbering
+#import "utils/custom-heading.typ": heading-display, active-heading, current-heading
 #import "utils/custom-tablex.typ": *
 #import "utils/indent.typ": indent
 #import "@preview/i-figured:0.2.1": show-figure, show-equation
@@ -89,10 +90,18 @@
       )
     },
     mainmatter: (..args) => {
-      mainmatter(
-        ..args,
-        fonts: fonts + args.named().at("fonts", default: (:)),
-      )
+      if type == "master" or type == "doctor" {
+        mainmatter(
+          display-header: true,
+          ..args,
+          fonts: fonts + args.named().at("fonts", default: (:)),
+        )
+      } else {
+        mainmatter(
+          ..args,
+          fonts: fonts + args.named().at("fonts", default: (:)),
+        )
+      }
     },
     mainmatter-end: (..args) => {
       mainmatter-end(
