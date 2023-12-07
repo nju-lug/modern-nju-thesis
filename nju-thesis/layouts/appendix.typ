@@ -1,4 +1,4 @@
-#import "../utils/i-figured.typ"
+#import "@preview/i-figured:0.2.1"
 #import "../utils/custom-numbering.typ": custom-numbering
 
 // 后记，重置 heading 计数器
