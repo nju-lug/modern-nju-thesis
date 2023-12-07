@@ -26,7 +26,7 @@
 #import "utils/custom-heading.typ": heading-display, active-heading, current-heading
 #import "utils/custom-tablex.typ": *
 #import "utils/indent.typ": indent
-#import "@preview/i-figured:0.2.1": show-figure, show-equation
+#import "utils/i-figured.typ": show-figure, show-equation
 #import "utils/style.typ": 字体
 #import "utils/style.typ": 字号
 

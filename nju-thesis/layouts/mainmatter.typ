@@ -1,5 +1,5 @@
 #import "@preview/anti-matter:0.0.2": anti-front-end
-#import "@preview/i-figured:0.2.1"
+#import "../utils/i-figured.typ"
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/custom-numbering.typ": custom-numbering
 #import "../utils/custom-heading.typ": heading-display, active-heading, current-heading
