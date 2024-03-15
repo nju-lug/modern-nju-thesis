@@ -110,7 +110,7 @@
 
 == 图表
 
-引用@tbl:timing，引用@tbl:timing-tlt，以及@fig:nju-logo。引用图表时，表格、图片和代码分别需要加上 `tbl:`、`fig:` 和 `lst:` 前缀才能正常显示编号。以及这里使用 `fig` 函数替代原生 `figure` 函数以支持将 `tablex` 作为表格来识别。
+引用@tbl:timing，引用@tbl:timing-tlt，以及@fig:nju-logo。引用图表时，表格和图片分别需要加上 `tbl:`和`fig:` 前缀才能正常显示编号。以及这里使用 `fig` 函数替代原生 `figure` 函数以支持将 `tablex` 作为表格来识别。
 
 #align(center, (stack(dir: ltr)[
   #fig(
@@ -165,10 +165,13 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
 == 代码块
 
+代码块支持语法高亮。引用时需要加上 `lst:` @lst:code
+
+#fig(
 ```py
 def add(x, y):
   return x + y
-```
+```, caption:[代码块]) <code>
 
 
 = 正文
