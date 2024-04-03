@@ -1,4 +1,3 @@
-#import "@preview/t4t:0.3.2": is
 #import "../utils/custom-tablex.typ": gridx, colspanx
 #import "../utils/datetime-display.typ": datetime-display
 #import "../utils/style.typ": 字号, 字体
@@ -37,13 +36,13 @@
 
   // 2.  对参数进行处理
   // 2.1 如果是字符串，则使用换行符将标题分隔为列表
-  if (is.str(info.title)) {
+  if type(info.title) == str {
     info.title = info.title.split("\n")
   }
   // 2.2 根据 min-title-lines 填充标题
   info.title = info.title + range(min-title-lines - info.title.len()).map((it) => "　")
   // 2.3 处理提交日期
-  if (is.type(datetime, info.submit-date)) {
+  if type(info.submit-date) == datetime {
     info.submit-date = datetime-display(info.submit-date)
   }
 

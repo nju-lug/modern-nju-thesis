@@ -1,5 +1,3 @@
-#import "@preview/t4t:0.3.2": is
-
 #let notation(
   twoside: false,
   title: "符号表",
@@ -24,7 +22,7 @@
       ..args,
       // 解析 terms 内部结构以渲染到表格里
       ..body.children
-        .filter(it => is.elem(terms.item, it))
+        .filter(it => it.func() == terms.item)
         .map(it => (it.term, it.description))
         .flatten()
     ))

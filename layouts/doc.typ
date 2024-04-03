@@ -1,5 +1,3 @@
-#import "@preview/t4t:0.3.2": is
-
 // 文稿设置，可以进行一些像页面边距这类的全局设置
 #let doc(
   // documentclass 传入参数
@@ -18,7 +16,7 @@
 
   // 2.  对参数进行处理
   // 2.1 如果是字符串，则使用换行符将标题分隔为列表
-  if (is.str(info.title)) {
+  if type(info.title) == str {
     info.title = info.title.split("\n")
   }
 

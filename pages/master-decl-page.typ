@@ -1,4 +1,3 @@
-#import "@preview/t4t:0.3.2": is
 #import "../utils/indent.typ": indent
 #import "../utils/style.typ": 字号, 字体
 

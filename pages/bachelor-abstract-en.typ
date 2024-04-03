@@ -1,4 +1,3 @@
-#import "@preview/t4t:0.3.2": is
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/indent.typ": fake-par
 #import "../utils/double-underline.typ": double-underline
@@ -32,7 +31,7 @@
 
   // 2.  对参数进行处理
   // 2.1 如果是字符串，则使用换行符将标题分隔为列表
-  if (is.str(info.title-en)) {
+  if type(info.title-en) == str {
     info.title-en = info.title-en.split("\n")
   }
 

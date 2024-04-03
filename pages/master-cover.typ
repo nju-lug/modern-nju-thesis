@@ -1,4 +1,3 @@
-#import "@preview/t4t:0.3.2": is
 #import "../utils/datetime-display.typ": datetime-display, datetime-en-display
 #import "../utils/justify-text.typ": justify-text
 #import "../utils/style.typ": 字号, 字体
@@ -49,24 +48,24 @@
 
   // 2.  对参数进行处理
   // 2.1 如果是字符串，则使用换行符将标题分隔为列表
-  if (is.str(info.title)) {
+  if type(info.title) == str {
     info.title = info.title.split("\n")
   }
-  if (is.str(info.title-en)) {
+  if type(info.title-en) == str {
     info.title-en = info.title-en.split("\n")
   }
   // 2.2 根据 min-title-lines 和 min-reviewer-lines 填充标题和评阅人
   info.title = info.title + range(min-title-lines - info.title.len()).map((it) => "　")
   info.reviewer = info.reviewer + range(min-reviewer-lines - info.reviewer.len()).map((it) => "　")
   // 2.3 处理日期
-  assert(is.type(datetime, info.submit-date), message: "submit-date must be datetime.")
-  if (is.type(datetime, info.defend-date)) {
+  assert(type(info.submit-date) == datetime, message: "submit-date must be datetime.")
+  if type(info.defend-date) == datetime {
     info.defend-date = datetime-display(info.defend-date)
   }
-  if (is.type(datetime, info.confer-date)) {
+  if type(info.confer-date) == datetime {
     info.confer-date = datetime-display(info.confer-date)
   }
-  if (is.type(datetime, info.bottom-date)) {
+  if type(info.bottom-date) == datetime {
     info.bottom-date = datetime-display(info.bottom-date)
   }
   // 2.4 处理 degree
