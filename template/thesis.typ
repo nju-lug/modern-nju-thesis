@@ -1,4 +1,4 @@
-#import "modern-nju-thesis/lib.typ": documentclass, tablex, fig, tlt, indent
+#import "../lib.typ": documentclass, tablex, fig, tlt, indent
 // #import "@preview/modern-nju-thesis:0.3.0": documentclass, tablex, fig, tlt, indent
 
 // 双面模式，会加入空白页，便于打印
@@ -137,7 +137,7 @@
 ]))
 
 #fig(
-  image("modern-nju-thesis/assets/vi/nju-emblem.svg", width: 20%),
+  image("images/nju-emblem.svg", width: 20%),
   caption: [图片测试],
 ) <nju-logo>
 
@@ -185,12 +185,14 @@ def add(x, y):
 
 
 // 手动分页
-#if (twoside) {
+#if twoside {
   pagebreak() + " "
 }
-// 参考文献
-#bibliography(("bibs/ex01.bib", "bibs/ex02.bib"),
-  style: "ieee"
+
+#bibliography(
+  title: "参考文献",
+  style: "gb-7714-2015-numeric",
+  "ref.bib",
 )
 
 
@@ -200,7 +202,7 @@ def add(x, y):
 ]
 
 // 手动分页
-#if (twoside) {
+#if twoside {
   pagebreak() + " "
 }
 
@@ -219,6 +221,6 @@ def add(x, y):
 附录内容，这里也可以加入图片，例如@fig:appendix-img。
 
 #fig(
-  image("modern-nju-thesis/assets/vi/nju-emblem.svg", width: 20%),
+  image("images/nju-emblem.svg", width: 20%),
   caption: [图片测试],
 ) <appendix-img>

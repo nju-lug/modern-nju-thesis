@@ -2,7 +2,9 @@
 
 南京大学毕业论文（设计）的 Typst 模板，能够简洁、快速、持续生成 PDF 格式的毕业论文。
 
-欢迎加入 QQ 群一起讨论：943622984
+Typst 非官方中文交流群：793548390
+
+南京大学 Typst 交流群：943622984
 
 ![](images/editor.png)
 
@@ -29,7 +31,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 ## 使用
 
-快速浏览效果: 查看 [thesis.pdf](https://github.com/OrangeX4/modern-nju-thesis/blob/main/thesis.pdf)，样例论文源码：查看 [thesis.typ](https://github.com/OrangeX4/modern-nju-thesis/blob/main/thesis.typ)
+快速浏览效果: 查看 [thesis.pdf](https://github.com/nju-lug/modern-nju-thesis/releases/latest/download/thesis.pdf)，样例论文源码：查看 [thesis.typ](https://github.com/nju-lug/modern-nju-thesis/blob/main/template/thesis.typ)
 
 **你只需要修改根目录下的 `thesis.typ` 文件即可，基本可以满足你的所有需求，`nju-thesis` 目录下的代码可以用于参数查阅，但是理论上你不应该对其进行更改。**
 
@@ -225,12 +227,12 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 该模板是在 2023 年 10 ～ 11 月份（Typst Verison 0.9 时）开发的，此时 Typst 语法基本稳定，并且提供了 **包管理** 功能，因此能够减少很多不必要的代码。
 
-并且我对模板的文件架构进行了解耦，主要分为了 `utils`、`templates` 和 `layouts` 三个目录，这三个目录可以看后文的开发者指南，并且使用 **闭包** 特性实现了类似不可变全局变量的全局配置能力，即模板中的 `documentclass` 函数类。
+并且我对模板的文件架构进行了解耦，主要分为了 `utils`、`pages` 和 `layouts` 三个目录，这三个目录可以看后文的开发者指南，并且使用 **闭包** 特性实现了类似不可变全局变量的全局配置能力，即模板中的 `documentclass` 函数类。
 
 
 ### 我不是南京大学本科生，如何迁移该模板？
 
-我在开发的过程中已经对模板的各个模板进行了解耦，理论上你只需要在 `templates` 目录中加入你需要的页面，然后更改少许、或者不需要更改其他目录的代码。
+我在开发的过程中已经对模板的各个模板进行了解耦，理论上你只需要在 `pages` 目录中加入你需要的页面，然后更改少许、或者不需要更改其他目录的代码。
 
 具体目录职责划分可以看下面的开发者指南。
 
@@ -248,12 +250,12 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 - `utils` 目录: 包含了模板使用到的各种自定义辅助函数，存放没有外部依赖，且 **不会渲染出页面的函数**。
   - <del>`i-equation.typ` 文件: 模仿 [i-figured](https://github.com/typst/packages/tree/main/packages/preview/i-figured/0.1.0) 包编写的数学公式编号函数。</del> 已经合并至 [i-figured](https://github.com/typst/packages/tree/main/packages/preview/i-figured/0.2.2).
-- `templates` 目录: 包含了模板用到的各个 **独立页面**，例如封面页、声明页、摘要等，即 **会渲染出不影响其他页面的独立页面的函数**。
+- `pages` 目录: 包含了模板用到的各个 **独立页面**，例如封面页、声明页、摘要等，即 **会渲染出不影响其他页面的独立页面的函数**。
 - `layouts` 目录: 布局目录，存放着用于排篇布局的、应用于 `show` 指令的、**横跨多个页面的函数**，例如为了给页脚进行罗马数字编码的前言 `preface` 函数。
   - 主要分成了 `doc` 文稿、`preface` 前言、`mainmatter` 正文与 `appendix` 附录/后记。
 - `template.typ`:
   - **职责一**: 作为一个统一的对外接口，暴露出内部的 utils 函数，例如三线表 `tlt` 函数。
-  - **职责二**: 使用 **函数闭包** 特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `templates` 内部函数。
+  - **职责二**: 使用 **函数闭包** 特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `pages` 内部函数。
 
 
 ## 参与贡献
