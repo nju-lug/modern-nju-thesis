@@ -1,4 +1,4 @@
-# 南京大学学位论文 nju-thesis-typst
+# 南京大学学位论文 modern-nju-thesis
 
 南京大学毕业论文（设计）的 Typst 模板，能够简洁、快速、持续生成 PDF 格式的毕业论文。
 
@@ -29,7 +29,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 ## 使用
 
-快速浏览效果: 查看 [thesis.pdf](https://github.com/OrangeX4/nju-thesis-typst/blob/main/thesis.pdf)，样例论文源码：查看 [thesis.typ](https://github.com/OrangeX4/nju-thesis-typst/blob/main/thesis.typ)
+快速浏览效果: 查看 [thesis.pdf](https://github.com/OrangeX4/modern-nju-thesis/blob/main/thesis.pdf)，样例论文源码：查看 [thesis.typ](https://github.com/OrangeX4/modern-nju-thesis/blob/main/thesis.typ)
 
 **你只需要修改根目录下的 `thesis.typ` 文件即可，基本可以满足你的所有需求，`nju-thesis` 目录下的代码可以用于参数查阅，但是理论上你不应该对其进行更改。**
 
@@ -48,9 +48,9 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 ### 本地编辑（推荐）
 
-1. 克隆本项目，或者直接通过 [GitHub Releases](https://github.com/OrangeX4/nju-thesis-typst/releases) 页面下载。
+1. 克隆本项目，或者直接通过 [GitHub Releases](https://github.com/OrangeX4/modern-nju-thesis/releases) 页面下载。
     ```sh
-    git clone https://github.com/OrangeX4/nju-thesis-typst.git
+    git clone https://github.com/OrangeX4/modern-nju-thesis.git
     ```
 2. 在 [VS Code](https://code.visualstudio.com/) 中打开该目录。
 3. 在 VS Code 中安装 [Typst LSP](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) 和 [Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview) 插件。前者负责语法高亮和错误检查，后者负责预览。
