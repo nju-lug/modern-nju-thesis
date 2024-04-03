@@ -50,12 +50,12 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 ### 本地编辑（推荐）
 
-1. 克隆本项目，或者直接通过 [GitHub Releases](https://github.com/OrangeX4/modern-nju-thesis/releases) 页面下载。
+1. 克隆本项目，或者直接通过 [GitHub Releases](https://github.com/nju-lug/modern-nju-thesis/releases) 页面下载。
     ```sh
-    git clone https://github.com/OrangeX4/modern-nju-thesis.git
+    git clone https://github.com/nju-lug/modern-nju-thesis.git
     ```
-2. 在 [VS Code](https://code.visualstudio.com/) 中打开该目录。
-3. 在 VS Code 中安装 [Typst LSP](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) 和 [Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview) 插件。前者负责语法高亮和错误检查，后者负责预览。
+2. 在 [VS Code](https://code.visualstudio.com/) 中打开该目录，并打开 `template/thesis.typ` 文件。
+3. 在 VS Code 中安装 [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) 和 [Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview) 插件。前者负责语法高亮和错误检查，后者负责预览。
     - 也推荐下载 [Typst Companion](https://marketplace.visualstudio.com/items?itemName=CalebFiggers.typst-companion) 插件，其提供了例如 `Ctrl + B` 进行加粗等便捷的快捷键。
     - 你还可以下载我开发的 [Typst Sync](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync) 和 [Typst Sympy Calculator](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator) 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。
 4. 按下 `Shift + Ctrl + P`，然后输入命令 `Typst Preview: Preview current file`，即可 **同步增量渲染与预览**，还提供了 **光标双向定位功能**。
