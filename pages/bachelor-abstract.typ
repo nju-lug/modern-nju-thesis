@@ -16,8 +16,8 @@
   outline-title: "中文摘要",
   outlined: true,
   anonymous-info-keys: ("author", "supervisor", "supervisor-ii"),
-  leading: 1.08em,
-  spacing: 1.08em,
+  leading: 1.28em,
+  spacing: 1.28em,
   body,
 ) = {
   // 1.  默认参数
