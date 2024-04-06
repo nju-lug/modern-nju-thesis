@@ -1,3 +1,4 @@
+#import "../utils/custom-cuti.typ": fakebold
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/indent.typ": fake-par
 #import "../utils/double-underline.typ": double-underline
@@ -56,20 +57,20 @@
     #align(center)[
       #set text(size: 字号.小二, weight: "bold")
 
-      #double-underline[南京大学本科生毕业论文（设计、作品）中文摘要]
+      #double-underline[#fakebold[南京大学本科生毕业论文（设计、作品）中文摘要]]
     ]
 
-    *题目*：#info-value("title", (("",)+ info.title).sum())
+    #fakebold[题目：]#info-value("title", (("",)+ info.title).sum())
 
-    *院系*：#info-value("department", info.department)
+    #fakebold[院系：]#info-value("department", info.department)
 
-    *专业*：#info-value("major", info.major)
+    #fakebold[专业：]#info-value("major", info.major)
 
-    *本科生姓名*：#info-value("author", info.author)
+    #fakebold[本科生姓名：]#info-value("author", info.author)
 
-    *指导教师（姓名、职称）*：#info-value("supervisor", info.supervisor.at(0) + info.supervisor.at(1)) #(if info.supervisor-ii != () [#h(1em) #info-value("supervisor-ii", info.supervisor-ii.at(0) + info.supervisor-ii.at(1))])
+    #fakebold[指导教师（姓名、职称）：]#info-value("supervisor", info.supervisor.at(0) + info.supervisor.at(1)) #(if info.supervisor-ii != () [#h(1em) #info-value("supervisor-ii", info.supervisor-ii.at(0) + info.supervisor-ii.at(1))])
 
-    *摘要*：
+    #fakebold[摘要：]
 
     #[
       #set par(first-line-indent: 2em)
@@ -81,6 +82,6 @@
 
     #v(1em)
 
-    *关键词*：#(("",)+ keywords.intersperse("；")).sum()
+    #fakebold[关键词：]#(("",)+ keywords.intersperse("；")).sum()
   ]
 }
