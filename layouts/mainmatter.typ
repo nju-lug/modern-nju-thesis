@@ -77,8 +77,9 @@
   // 3.3 设置 figure 的编号
   show heading: i-figured.reset-counters
   show figure: show-figure
-  // 3.4 设置 equation 的编号
+  // 3.4 设置 equation 的编号和假段落首行缩进
   show math.equation.where(block: true): show-equation
+  show math.equation.where(block: true): it => it + fake-par
   // 3.5 表格表头置顶 + 不用冒号用空格分割
   show figure.where(
     kind: table

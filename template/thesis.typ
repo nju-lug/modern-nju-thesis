@@ -1,5 +1,5 @@
-#import "../lib.typ": documentclass, tablex, fig, tlt, indent
-// #import "@preview/modern-nju-thesis:0.3.0": documentclass, tablex, fig, tlt, indent
+#import "../lib.typ": documentclass
+// #import "@preview/modern-nju-thesis:0.3.0": documentclass
 
 #let (
   // 布局函数
@@ -110,11 +110,11 @@
 
 == 图表
 
-引用@tbl:timing，引用@tbl:timing-tlt，以及@fig:nju-logo。引用图表时，表格和图片分别需要加上 `tbl:`和`fig:` 前缀才能正常显示编号。以及这里使用 `fig` 函数替代原生 `figure` 函数以支持将 `tablex` 作为表格来识别。
+引用@tbl:timing，引用@tbl:timing-tlt，以及@fig:nju-logo。引用图表时，表格和图片分别需要加上 `tbl:`和`fig:` 前缀才能正常显示编号。
 
 #align(center, (stack(dir: ltr)[
-  #fig(
-    tablex(
+  #figure(
+    table(
       align: center + horizon,
       columns: 4,
       [t], [1], [2], [3],
@@ -125,17 +125,21 @@
 ][
   #h(50pt)
 ][
-  #fig(
-    tlt(
+  #figure(
+    table(
       columns: 4,
+      stroke: none,
+      table.hline(),
       [t], [1], [2], [3],
+      table.hline(stroke: .5pt),
       [y], [0.3s], [0.4s], [0.8s],
+      table.hline(),
     ),
     caption: [三线表],
   ) <timing-tlt>
 ]))
 
-#fig(
+#figure(
   image("images/nju-emblem.svg", width: 20%),
   caption: [图片测试],
 ) <nju-logo>
@@ -151,7 +155,7 @@ $ phi.alt := (1 + sqrt(5)) / 2 $ <ratio>
 
 $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
-#indent 图表和公式后的段落要用 `#indent` 手动缩进。同时，我们也可以通过 `<->` 标签来标识该行间公式不需要编号
+我们也可以通过 `<->` 标签来标识该行间公式不需要编号
 
 $ y = integral_1^2 x^2 dif x $ <->
 
@@ -167,11 +171,13 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
 代码块支持语法高亮。引用时需要加上 `lst:` @lst:code
 
-#fig(
-```py
-def add(x, y):
-  return x + y
-```, caption:[代码块]) <code>
+#figure(
+  ```py
+  def add(x, y):
+    return x + y
+  ```,
+  caption:[代码块],
+) <code>
 
 
 = 正文
@@ -219,7 +225,7 @@ def add(x, y):
 
 附录内容，这里也可以加入图片，例如@fig:appendix-img。
 
-#fig(
+#figure(
   image("images/nju-emblem.svg", width: 20%),
   caption: [图片测试],
 ) <appendix-img>
