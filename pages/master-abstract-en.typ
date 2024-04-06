@@ -8,7 +8,7 @@
 // 研究生英文摘要页
 #let master-abstract-en(
   // documentclass 传入的参数
-  type: "master",
+  doctype: "master",
   degree: "academic",
   anonymous: false,
   twoside: false,

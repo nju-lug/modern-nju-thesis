@@ -31,7 +31,7 @@
 
 // 使用函数闭包特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `templates` 内部函数。
 #let documentclass(
-  type: "bachelor",  // "bachelor" | "master" | "doctor" | "postdoc"，文档类型，默认为本科生 bachelor
+  doctype: "bachelor",  // "bachelor" | "master" | "doctor" | "postdoc"，文档类型，默认为本科生 bachelor
   degree: "academic",  // "academic" | "professional"，学位类型，默认为学术型 academic
   nl-cover: false,  // TODO: 是否使用国家图书馆封面，默认关闭
   twoside: false,  // 双面模式，会加入空白页，便于打印
@@ -77,7 +77,7 @@
 
   (
     // 将传入参数再导出
-    type: type,
+    doctype: doctype,
     degree: degree,
     nl-cover: nl-cover,
     twoside: twoside,
@@ -98,7 +98,7 @@
       )
     },
     mainmatter: (..args) => {
-      if type == "master" or type == "doctor" {
+      if doctype == "master" or doctype == "doctor" {
         mainmatter(
           twoside: twoside,
           display-header: true,
@@ -135,9 +135,9 @@
 
     // 封面页，通过 type 分发到不同函数
     cover: (..args) => {
-      if type == "master" or type == "doctor" {
+      if doctype == "master" or doctype == "doctor" {
         master-cover(
-          type: type,
+          doctype: doctype,
           degree: degree,
           nl-cover: nl-cover,
           anonymous: anonymous,
@@ -146,7 +146,7 @@
           fonts: fonts + args.named().at("fonts", default: (:)),
           info: info + args.named().at("info", default: (:)),
         )
-      } else if type == "postdoc" {
+      } else if doctype == "postdoc" {
         panic("postdoc has not yet been implemented.")
       } else {
         bachelor-cover(
@@ -161,14 +161,14 @@
 
     // 声明页，通过 type 分发到不同函数
     decl-page: (..args) => {
-      if type == "master" or type == "doctor" {
+      if doctype == "master" or doctype == "doctor" {
         master-decl-page(
           anonymous: anonymous,
           twoside: twoside,
           ..args,
           fonts: fonts + args.named().at("fonts", default: (:)),
         )
-      } else if type == "postdoc" {
+      } else if doctype == "postdoc" {
         panic("postdoc has not yet been implemented.")
       } else {
         bachelor-decl-page(
@@ -183,9 +183,9 @@
     
     // 中文摘要页，通过 type 分发到不同函数
     abstract: (..args) => {
-      if type == "master" or type == "doctor" {
+      if doctype == "master" or doctype == "doctor" {
         master-abstract(
-          type: type,
+          doctype: doctype,
           degree: degree,
           anonymous: anonymous,
           twoside: twoside,
@@ -193,7 +193,7 @@
           fonts: fonts + args.named().at("fonts", default: (:)),
           info: info + args.named().at("info", default: (:)),
         )
-      } else if type == "postdoc" {
+      } else if doctype == "postdoc" {
         panic("postdoc has not yet been implemented.")
       } else {
         bachelor-abstract(
@@ -208,9 +208,9 @@
 
     // 英文摘要页，通过 type 分发到不同函数
     abstract-en: (..args) => {
-      if type == "master" or type == "doctor" {
+      if doctype == "master" or doctype == "doctor" {
         master-abstract-en(
-          type: type,
+          doctype: doctype,
           degree: degree,
           anonymous: anonymous,
           twoside: twoside,
@@ -218,7 +218,7 @@
           fonts: fonts + args.named().at("fonts", default: (:)),
           info: info + args.named().at("info", default: (:)),
         )
-      } else if type == "postdoc" {
+      } else if doctype == "postdoc" {
         panic("postdoc has not yet been implemented.")
       } else {
         bachelor-abstract-en(

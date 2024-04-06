@@ -5,7 +5,7 @@
 // 硕士研究生封面
 #let master-cover(
   // documentclass 传入的参数
-  type: "master",
+  doctype: "master",
   degree: "academic",
   nl-cover: false,
   anonymous: false,
@@ -70,7 +70,7 @@
   }
   // 2.4 处理 degree
   if (info.degree == auto) {
-    if (type == "doctor") {
+    if (doctype == "doctor") {
       info.degree = "工程博士"
     } else {
       info.degree = "工程硕士"
@@ -161,7 +161,7 @@
 
   // 将中文之间的空格间隙从 0.25 em 调整到 0.5 em
   text(size: 28pt, font: fonts.宋体, spacing: 200%, weight: "bold",
-    if type == "doctor" { "博 士 学 位 论 文" } else { "硕 士 学 位 论 文" },
+    if doctype == "doctor" { "博 士 学 位 论 文" } else { "硕 士 学 位 论 文" },
   )
   
   if (anonymous) {
@@ -272,7 +272,7 @@
 
   v(6pt)
 
-  smallcaps(if type == "doctor" { "Doctor of phlosophy" } else { "Master" })
+  smallcaps(if doctype == "doctor" { "Doctor of phlosophy" } else { "Master" })
 
   v(6pt)
 
