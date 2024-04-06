@@ -24,7 +24,6 @@
 #import "pages/acknowledgement.typ": acknowledgement
 #import "utils/custom-numbering.typ": custom-numbering
 #import "utils/custom-heading.typ": heading-display, active-heading, current-heading
-#import "utils/custom-tablex.typ": *
 #import "utils/indent.typ": indent
 #import "@preview/i-figured:0.2.4": show-figure, show-equation
 #import "utils/style.typ": 字体

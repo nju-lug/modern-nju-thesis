@@ -1,4 +1,3 @@
-#import "../utils/custom-tablex.typ": gridx, colspanx
 #import "../utils/datetime-display.typ": datetime-display
 #import "../utils/style.typ": 字号, 字体
 
@@ -13,9 +12,9 @@
   stoke-width: 0.5pt,
   min-title-lines: 2,
   info-inset: (x: 0pt, bottom: 1pt),
-  info-key-width: 74pt,
-  column-gutter: -8pt,
-  row-gutter: 1pt,
+  info-key-width: 72pt,
+  column-gutter: -3pt,
+  row-gutter: 11pt,
   anonymous-info-keys: ("grade", "student-id", "author", "supervisor", "supervisor-ii"),
   bold-info-keys: ("title",),
   bold-level: "bold",
@@ -73,10 +72,10 @@
   }
 
   let info-long-value(key, body) = {
-    colspanx(3,
+    grid.cell(colspan: 3,
       info-value(
         key,
-        if (anonymous and (key in anonymous-info-keys)) {
+        if anonymous and (key in anonymous-info-keys) {
           "██████████"
         } else {
           body
@@ -88,7 +87,7 @@
   let info-short-value(key, body) = {
     info-value(
       key,
-      if (anonymous and (key in anonymous-info-keys)) {
+      if anonymous and (key in anonymous-info-keys) {
         "█████"
       } else {
         body
@@ -105,7 +104,7 @@
   set align(center)
 
   // 匿名化处理去掉封面标识
-  if (anonymous) {
+  if anonymous {
     v(70pt)
   } else {
     // 封面图标
@@ -120,13 +119,13 @@
   // 将中文之间的空格间隙从 0.25 em 调整到 0.5 em
   text(size: 字号.一号, font: fonts.宋体, spacing: 200%, weight: "bold")[本 科 毕 业 论 文]
   
-  if (anonymous) {
-    v(132pt)
+  if anonymous {
+    v(138pt)
   } else {
-    v(44pt)
+    v(50pt)
   }
 
-  block(width: 300pt, gridx(
+  block(width: 300pt, grid(
     columns: (info-key-width, 1fr, info-key-width, 1fr),
     column-gutter: column-gutter,
     row-gutter: row-gutter,
