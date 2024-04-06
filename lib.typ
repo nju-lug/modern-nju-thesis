@@ -77,6 +77,14 @@
   ) + info
 
   (
+    // 将传入参数再导出
+    type: type,
+    degree: degree,
+    nl-cover: nl-cover,
+    twoside: twoside,
+    anonymous: anonymous,
+    fonts: fonts,
+    info: info,
     // 页面布局
     doc: (..args) => {
       doc(

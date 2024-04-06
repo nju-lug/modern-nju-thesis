@@ -1,18 +1,17 @@
 #import "../lib.typ": documentclass, tablex, fig, tlt, indent
 // #import "@preview/modern-nju-thesis:0.3.0": documentclass, tablex, fig, tlt, indent
 
-// 双面模式，会加入空白页，便于打印
-#let twoside = false
-// #let twoside = true
-
 #let (
-  doc, preface, mainmatter, mainmatter-end, appendix,
-  fonts-display-page, cover, decl-page, abstract, abstract-en, outline-page, list-of-figures, list-of-tables, notation, acknowledgement,
+  // 布局函数
+  twoside, doc, preface, mainmatter, mainmatter-end, appendix,
+  // 页面函数
+  fonts-display-page, cover, decl-page, abstract, abstract-en,
+  outline-page, list-of-figures, list-of-tables, notation, acknowledgement,
 ) = documentclass(
   // type: "bachelor",  // "bachelor" | "master" | "doctor" | "postdoc", 文档类型，默认为本科生 bachelor
   // degree: "academic",  // "academic" | "professional", 学位类型，默认为学术型 academic
   // anonymous: true,  // 盲审模式
-  twoside: twoside,  // 双面模式，会加入空白页，便于打印
+  twoside: false,  // 双面模式，会加入空白页，便于打印
   // 可自定义字体，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   // fonts: (楷体: ("Times New Roman", "FZKai-Z03S")),
   info: (
