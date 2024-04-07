@@ -5,7 +5,7 @@
   // 布局函数
   twoside, doc, preface, mainmatter, mainmatter-end, appendix,
   // 页面函数
-  fonts-display-page, cover, decl-page, abstract, abstract-en,
+  fonts-display-page, cover, decl-page, abstract, abstract-en, bilingual-bibliography,
   outline-page, list-of-figures, list-of-tables, notation, acknowledgement,
 ) = documentclass(
   // doctype: "bachelor",  // "bachelor" | "master" | "doctor" | "postdoc", 文档类型，默认为本科生 bachelor
@@ -31,6 +31,8 @@
     // supervisor-ii-en: "Professor My Supervisor",
     submit-date: datetime.today(),
   ),
+  // 参考文献源
+  bibliography: bibliography.with("ref.bib"),
 )
 
 // 文稿设置
@@ -194,12 +196,16 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
   pagebreak() + " "
 }
 
-#bibliography(
-  title: "参考文献",
-  style: "gb-7714-2015-numeric",
-  "ref.bib",
-)
+// 中英双语参考文献
+// Demo 版本，可能存在 bug，如果失效请使用 Typst 默认的参考文献
+#bilingual-bibliography()
 
+// 默认参考文献
+// #bibliography(
+//   title: "参考文献",
+//   style: "gb-7714-2015-numeric",
+//   "ref.bib",
+// )
 
 // 致谢
 #acknowledgement[

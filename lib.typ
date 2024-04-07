@@ -23,6 +23,7 @@
 #import "pages/notation.typ": notation
 #import "pages/acknowledgement.typ": acknowledgement
 #import "utils/custom-cuti.typ": *
+#import "utils/bilingual-bibliography.typ": bilingual-bibliography
 #import "utils/custom-numbering.typ": custom-numbering
 #import "utils/custom-heading.typ": heading-display, active-heading, current-heading
 #import "utils/indent.typ": indent
@@ -37,6 +38,7 @@
   nl-cover: false,  // TODO: 是否使用国家图书馆封面，默认关闭
   twoside: false,  // 双面模式，会加入空白页，便于打印
   anonymous: false,  // 盲审模式
+  bibliography: none,  // 原来的参考文献函数
   fonts: (:),  // 字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   info: (:),
 ) = {
@@ -263,6 +265,14 @@
     notation: (..args) => {
       notation(
         twoside: twoside,
+        ..args,
+      )
+    },
+
+    // 参考文献页
+    bilingual-bibliography: (..args) => {
+      bilingual-bibliography(
+        bibliography: bibliography,
         ..args,
       )
     },
