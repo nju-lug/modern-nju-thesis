@@ -13,8 +13,10 @@
   min-title-lines: 2,
   info-inset: (x: 0pt, bottom: 1pt),
   info-key-width: 72pt,
+  info-key-font: "楷体",
+  info-value-font: "楷体",
   column-gutter: -3pt,
-  row-gutter: 11pt,
+  row-gutter: 11.5pt,
   anonymous-info-keys: ("grade", "student-id", "author", "supervisor", "supervisor-ii"),
   bold-info-keys: ("title",),
   bold-level: "bold",
@@ -51,7 +53,11 @@
       width: 100%,
       inset: info-inset,
       stroke: none,
-      text(font: fonts.楷体, size: 字号.三号, body),
+      text(
+        font: fonts.at(info-key-font, default: "楷体"),
+        size: 字号.三号,
+        body
+      ),
     )
   }
 
@@ -62,7 +68,7 @@
       inset: info-inset,
       stroke: (bottom: stoke-width + black),
       text(
-        font: fonts.宋体,
+        font: fonts.at(info-value-font, default: "宋体"),
         size: 字号.三号,
         weight: if (key in bold-info-keys) { bold-level } else { "regular" },
         bottom-edge: "descender",
@@ -105,7 +111,7 @@
 
   // 匿名化处理去掉封面标识
   if anonymous {
-    v(70pt)
+    v(52pt)
   } else {
     // 封面图标
     v(6pt)
@@ -113,19 +119,19 @@
     v(22pt)
     // 调整一下左边的间距
     pad(image("../assets/vi/nju-name.svg", width: 10.5cm), left: 0.4cm)
-    v(20pt)
+    v(2pt)
   }
 
   // 将中文之间的空格间隙从 0.25 em 调整到 0.5 em
   text(size: 字号.一号, font: fonts.宋体, spacing: 200%, weight: "bold")[本 科 毕 业 论 文]
   
   if anonymous {
-    v(138pt)
+    v(155pt)
   } else {
-    v(50pt)
+    v(67pt)
   }
 
-  block(width: 300pt, grid(
+  block(width: 318pt, grid(
     columns: (info-key-width, 1fr, info-key-width, 1fr),
     column-gutter: column-gutter,
     row-gutter: row-gutter,

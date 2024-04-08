@@ -14,7 +14,7 @@
   // 可自定义字体，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   // fonts: (楷体: ("Times New Roman", "FZKai-Z03S")),
   info: (
-    title: ("基于 Typst 的", "南京大学学位论文"),
+    title: (""),
     title-en: "My Title in English",
     grade: "20XX",
     student-id: "1234567890",
@@ -54,14 +54,14 @@
 #abstract(
   keywords: ("我", "就是", "测试用", "关键词")
 )[
-  中文摘要
+  本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容
 ]
 
 // 英文摘要
 #abstract-en(
   keywords: ("Dummy", "Keywords", "Here", "It Is")
 )[
-  English abstract
+  Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract.
 ]
 
 // 目录
@@ -82,12 +82,7 @@
 //   / DMRG: 密度矩阵重正化群密度矩阵重正化群密度矩阵重正化群 (Density-Matrix Reformation-Group)
 // ]
 
-= 引言
-
-== 量子计算
-
-John Preskill 认为我们现在处于“含噪声的中型量子时代”。
-量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力。
+= 导　论
 
 == 列表
 
@@ -182,7 +177,7 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 ) <code>
 
 
-= 正文
+= 正　文
 
 == 正文子标题
 

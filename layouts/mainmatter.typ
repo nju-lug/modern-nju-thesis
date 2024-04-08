@@ -11,8 +11,8 @@
   twoside: false,
   fonts: (:),
   // 其他参数
-  leading: 1.25em,
-  spacing: 1.25em,
+  leading: 1.5 * 15.6pt - 0.7em,
+  spacing: 1.5 * 15.6pt - 0.7em,
   justify: true,
   first-line-indent: 2em,
   numbering: custom-numbering.with(first-level: "第一章 ", depth: 3, "1.1 "),

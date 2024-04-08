@@ -17,7 +17,7 @@
   outlined: false,
   anonymous-info-keys: ("author-en", "supervisor-en", "supervisor-ii-en"),
   leading: 1.28em,
-  spacing: 1.28em,
+  spacing: 1.38em,
   body,
 ) = {
   // 1.  默认参数
@@ -57,10 +57,12 @@
     #align(center)[
       #set text(size: 字号.小二, weight: "bold")
 
+      #v(1em)
+
       #double-underline[#fakebold[南京大学本科生毕业论文（设计、作品）英文摘要]]
     ]
 
-    #v(6pt)
+    #v(2pt)
 
     THESIS: #info-value("title-en", (("",)+ info.title-en).sum())
 
@@ -72,15 +74,7 @@
 
     MENTOR: #info-value("supervisor-en", info.supervisor-en) #(if info.supervisor-ii-en != "" [#h(1em) #info-value("supervisor-ii-en", info.supervisor-ii-en)])
 
-    ABSTRACT:
-
-    #[
-      #set par(first-line-indent: 2em)
-
-      #fake-par
-      
-      #body
-    ]
+    ABSTRACT: #body
 
     #v(1em)
 

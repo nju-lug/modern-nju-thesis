@@ -3,7 +3,7 @@
   let size = measure(body, styles)
   stack(
     body,
-    v(4pt),
+    v(3pt),
     line(length: size.width),
     v(2pt),
     line(length: size.width),

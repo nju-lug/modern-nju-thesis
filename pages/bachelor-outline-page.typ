@@ -11,7 +11,7 @@
   depth: 3,
   title: "目　　录",
   outlined: false,
-  title-vspace: 32pt,
+  title-vspace: 0pt,
   title-text-args: auto,
   // 引用页数的字体，这里用于显示 Times New Roman
   reference-font: auto,
