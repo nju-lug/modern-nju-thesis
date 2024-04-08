@@ -206,8 +206,6 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
   pagebreak() + " "
 }
 
-// 正文结束标志，不可缺少
-#mainmatter-end()
 
 // 附录
 #show: appendix
@@ -224,3 +222,8 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
   image("images/nju-emblem.svg", width: 20%),
   caption: [图片测试],
 ) <appendix-img>
+
+
+// 正文结束标志，不可缺少
+// 这里放在附录后面，使得页码能正确计数
+#mainmatter-end()
