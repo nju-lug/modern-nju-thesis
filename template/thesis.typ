@@ -14,7 +14,7 @@
   // 可自定义字体，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   // fonts: (楷体: ("Times New Roman", "FZKai-Z03S")),
   info: (
-    title: (""),
+    title: ("基于 Typst 的", "南京大学学位论文"),
     title-en: "My Title in English",
     grade: "20XX",
     student-id: "1234567890",
@@ -54,15 +54,16 @@
 #abstract(
   keywords: ("我", "就是", "测试用", "关键词")
 )[
-  本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容本科生毕业论文摘要内容
+  中文摘要
 ]
 
 // 英文摘要
 #abstract-en(
   keywords: ("Dummy", "Keywords", "Here", "It Is")
 )[
-  Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract Undergraduate thesis abstract undergraduate thesis abstract.
+  English abstract
 ]
+
 
 // 目录
 #outline-page()
@@ -162,7 +163,7 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
 == 参考文献
 
-可以像这样引用参考文献：@wang2010guide 和 @kopka2004guide。
+可以像这样引用参考文献：图书#[@蒋有绪1998]和会议#[@中国力学学会1990]。
 
 == 代码块
 
@@ -192,8 +193,8 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 }
 
 // 中英双语参考文献
-// Demo 版本，默认使用 gb-7714-2015-numeric 样式
-#bilingual-bibliography()
+// 默认使用 gb-7714-2015-numeric 样式
+#bilingual-bibliography(full: true)
 
 // 致谢
 #acknowledgement[
