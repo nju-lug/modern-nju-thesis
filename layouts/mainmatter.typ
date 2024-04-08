@@ -35,6 +35,9 @@
   reset-footnote: true,
   // caption 的 separator
   separator: "  ",
+  // caption 样式
+  caption-style: strong,
+  caption-size: 字号.五号,
   // figure 计数
   show-figure: i-figured.show-figure,
   // equation 计数
@@ -81,11 +84,13 @@
   // 3.4 设置 equation 的编号和假段落首行缩进
   show math.equation.where(block: true): show-equation
   show math.equation.where(block: true): it => it + fake-par
-  // 3.5 表格表头置顶 + 不用冒号用空格分割
+  // 3.5 表格表头置顶 + 不用冒号用空格分割 + 样式
   show figure.where(
     kind: table
   ): set figure.caption(position: top)
   set figure.caption(separator: separator)
+  show figure.caption: caption-style
+  show figure.caption: set text(font: fonts.宋体, size: 字号.五号)
   // 3.6 优化列表显示
   //     术语列表 terms 不应该缩进
   show terms: set par(first-line-indent: 0pt)

@@ -10,7 +10,7 @@
   // 其他参数
   depth: 3,
   title: "目　　录",
-  outlined: true,
+  outlined: false,
   title-vspace: 32pt,
   title-text-args: auto,
   // 引用页数的字体，这里用于显示 Times New Roman
@@ -22,8 +22,8 @@
   // 垂直间距
   vspace: (25pt, 14pt),
   indent: (0pt, 18pt, 28pt),
-  // 一级标题不显示点号
-  fill: (none, auto),
+  // 全都显示点号
+  fill: (auto,),
   ..args,
 ) = {
   // 1.  默认参数

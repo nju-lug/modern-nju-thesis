@@ -1,4 +1,4 @@
-#import "@preview/modern-nju-thesis:0.3.1": documentclass
+#import "../lib.typ": documentclass
 
 #let (
   // 布局函数
@@ -68,25 +68,26 @@
 #outline-page()
 
 // 插图目录
-#list-of-figures()
+// #list-of-figures()
 
 // 表格目录
-#list-of-tables()
+// #list-of-tables()
 
 // 正文
 #show: mainmatter
 
 // 符号表
-#notation[
-  / DFT: 密度泛函理论 (Density functional theory)
-  / DMRG: 密度矩阵重正化群密度矩阵重正化群密度矩阵重正化群 (Density-Matrix Reformation-Group)
-]
+// #notation[
+//   / DFT: 密度泛函理论 (Density functional theory)
+//   / DMRG: 密度矩阵重正化群密度矩阵重正化群密度矩阵重正化群 (Density-Matrix Reformation-Group)
+// ]
 
-= 基本功能
+= 引言
 
-== 脚注
+== 量子计算
 
-我们可以添加一个脚注。#footnote[脚注内容]
+John Preskill 认为我们现在处于“含噪声的中型量子时代”。
+量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力。
 
 == 列表
 

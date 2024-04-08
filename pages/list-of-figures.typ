@@ -10,7 +10,7 @@
   fonts: (:),
   // 其他参数
   title: "插图目录",
-  outlined: true,
+  outlined: false,
   title-vspace: 32pt,
   title-text-args: auto,
   // caption 的 separator

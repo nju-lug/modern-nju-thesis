@@ -5,7 +5,7 @@
   // documentclass 传入的参数
   twoside: false,
   // 其他参数
-  spec: (front: "I", inner: "1", back: "I"),
+  spec: (front: "I", inner: "1", back: "1"),
   ..args,
   it,
 ) = {

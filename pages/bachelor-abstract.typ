@@ -14,7 +14,7 @@
   // 其他参数
   keywords: (),
   outline-title: "中文摘要",
-  outlined: true,
+  outlined: false,
   anonymous-info-keys: ("author", "supervisor", "supervisor-ii"),
   leading: 1.28em,
   spacing: 1.28em,
