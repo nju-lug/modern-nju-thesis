@@ -6,7 +6,7 @@ Typst 非官方中文交流群：793548390
 
 南京大学 Typst 交流群：943622984
 
-![](images/editor.png)
+![](imgs/editor.png)
 
 ## 劣势
 
@@ -30,42 +30,42 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 快速浏览效果: 查看 [thesis.pdf](https://github.com/nju-lug/modern-nju-thesis/releases/latest/download/thesis.pdf)，样例论文源码：查看 [thesis.typ](https://github.com/nju-lug/modern-nju-thesis/blob/main/template/thesis.typ)
 
-**你只需要修改根目录下的 `thesis.typ` 文件即可，基本可以满足你的所有需求。**
+**你只需要修改 `thesis.typ` 文件即可，基本可以满足你的所有需求。**
 
 如果你认为不能满足你的需求，可以先查阅后面的 [Q&A](#Q%26A) 部分。
 
-使用起来只需要导入
+模板已经上传到了 Typst Universe，使用起来十分简单，理论上只需要通过
 
 ```typst
-#import "@preview/modern-nju-thesis:0.3.0": documentclass
+#import "@preview/modern-nju-thesis:0.3.1": documentclass
 ```
 
-即可。
+导入即可。
 
 ### 在线编辑
 
-Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑：https://typst.app/project/rgiwHIjdPOnXr9HJb8H0oa
+Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑，这是一个 [例子](https://typst.app/project/rgiwHIjdPOnXr9HJb8H0oa)。
+
+实际上，我们只需要在 [Web App](https://typst.app/) 中的 `Start from template` 里选择 `modern-nju-thesis`，即可在线创建模板并使用。
+
+![](imgs/template.png)
+
+![](imgs/webapp.png)
 
 **但是 Web App 并没有安装本地 Windows 或 MacOS 所拥有的字体，所以字体上可能存在差异，所以推荐本地编辑！**
-
-![](images/web-app.png)
 
 PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。Overleaf 是在后台服务器运行了一个 LaTeX 编译器，本质上是计算密集型的服务；而 Typst 只需要在浏览器端使用 WASM 技术执行，本质上是 IO 密集型的服务，所以对服务器压力很小（只需要负责文件的云存储与协作同步功能）。
 
 
-### 本地编辑（推荐）
+### VS Code 本地编辑（推荐）
 
-1. 克隆本项目，或者直接通过 [GitHub Releases](https://github.com/nju-lug/modern-nju-thesis/releases) 页面下载。
-    ```sh
-    git clone https://github.com/nju-lug/modern-nju-thesis.git
-    ```
-2. 在 [VS Code](https://code.visualstudio.com/) 中打开该目录，并打开 `template/thesis.typ` 文件。
-3. 在 VS Code 中安装 [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) 和 [Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview) 插件。前者负责语法高亮和错误检查，后者负责预览。
+1. 在 VS Code 中安装 [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) 和 [Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview) 插件。前者负责语法高亮和错误检查等功能，后者负责预览。
     - 也推荐下载 [Typst Companion](https://marketplace.visualstudio.com/items?itemName=CalebFiggers.typst-companion) 插件，其提供了例如 `Ctrl + B` 进行加粗等便捷的快捷键。
     - 你还可以下载我开发的 [Typst Sync](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync) 和 [Typst Sympy Calculator](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator) 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。
-4. 按下 `Shift + Ctrl + P`，然后输入命令 `Typst Preview: Preview current file`，即可 **同步增量渲染与预览**，还提供了 **光标双向定位功能**。
+2. 按下 `Ctrl + Shift + P` 打开命令界面，输入 `Typst: Show available Typst templates (gallery) for picking up a template` 打开 Tinymist 提供的 Template Gallery，然后从里面找到 `modern-nju-thesis`，点击 `❤` 按钮进行收藏，以及点击 `+` 号，就可以创建对应的论文模板了。
+3. 最后用 VS Code 打开生成的目录，打开 `thesis.typ` 文件，并按下 `Ctrl + K V` 进行实时编辑和预览。
 
-
+![](imgs/gallery.png)
 
 ### 特性 / 路线图
 
@@ -78,7 +78,6 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
     - [x] **盲审模式**，将个人信息替换成小黑条，并且隐藏致谢页面，论文提交阶段使用 
     - [x] **双面模式**，会加入空白页，便于打印
     - [x] **自定义字体配置**，可以配置「宋体」、「黑体」与「楷体」等字体对应的具体字体
-        - [ ] **字体解耦合**：将字体配置进一步解耦合，让用到字体的地方加上一层字体名称配置项（从「标题（宋体）」-「具体字体」重构为「标题」-「宋体」-「具体字体」）
     - [x] **数学字体配置**：模板不提供配置，用户可以自己使用 `#show math.equation: set text(font: "Fira Math")` 更改
 - **模板**
   - [x] 本科生模板
@@ -116,7 +115,7 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 还实现了本科生和研究生的开题报告，只需要预览和编辑 `others` 目录下的文件即可。
 
-![开题报告](./images/proposal.png)
+![开题报告](./imgs/proposal.png)
 
 
 ## Q&A
@@ -158,13 +157,6 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 如果找不到你所需要的字体，可能是因为 **该字体变体（Variants）数量过少**，导致 Typst 无法识别到该中文字体。
 
 
-### 为什么楷体无法加粗？
-
-因为一般默认安装的「楷体」只有标准字重的字体，没有加粗版本的字体（华文粗楷等字体并不是免费商用的），而 Typst 又没有实现伪粗体（Fake Bold）算法，所以导致无法正常加粗。
-
-目前我还没找到一个比较好的解决方法。
-
-
 ### 学习 Typst 需要多久？
 
 一般而言，仅仅进行简单的编写，不关注布局的话，你可以打开模板就开始写了。
@@ -183,7 +175,7 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 ### 目前 Typst 有哪些第三方包和模板？
 
-可以参考 [第三方包](https://typst-doc-cn.github.io/docs/packages/)、[Awesome Typst Links](https://github.com/qjcg/awesome-typst) 和 [Awesome Typst 列表中文版](https://github.com/typst-doc-cn/awesome-typst-cn)。
+可以查看 [Typst Universe](https://typst.app/universe)。
 
 
 ### 为什么只有一个 thesis.typ 文件，没有按章节分多个文件？
@@ -247,18 +239,18 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 ### template 目录
 
 - `thesis.typ` 文件: 你的论文源文件，可以随意更改这个文件的名字，甚至你可以将这个文件在同级目录下复制多份，维持多个版本。
-- `ref.bib` 文件: 放置参考文献的文件。
+- `ref.bib` 文件: 用于放置参考文献。
+- `images` 目录: 用于放置图片。
 
 
 ### 内部目录
 
 - `utils` 目录: 包含了模板使用到的各种自定义辅助函数，存放没有外部依赖，且 **不会渲染出页面的函数**。
-  - <del>`i-equation.typ` 文件: 模仿 [i-figured](https://github.com/typst/packages/tree/main/packages/preview/i-figured/0.1.0) 包编写的数学公式编号函数。</del> 已经合并至 [i-figured](https://github.com/typst/packages/tree/main/packages/preview/i-figured/0.2.2).
 - `pages` 目录: 包含了模板用到的各个 **独立页面**，例如封面页、声明页、摘要等，即 **会渲染出不影响其他页面的独立页面的函数**。
 - `layouts` 目录: 布局目录，存放着用于排篇布局的、应用于 `show` 指令的、**横跨多个页面的函数**，例如为了给页脚进行罗马数字编码的前言 `preface` 函数。
   - 主要分成了 `doc` 文稿、`preface` 前言、`mainmatter` 正文与 `appendix` 附录/后记。
 - `lib.typ`:
-  - **职责一**: 作为一个统一的对外接口，暴露出内部的 utils 函数，例如三线表 `tlt` 函数。
+  - **职责一**: 作为一个统一的对外接口，暴露出内部的 utils 函数。
   - **职责二**: 使用 **函数闭包** 特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `pages` 内部函数。
 
 
@@ -272,6 +264,7 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 ## 致谢
 
 - 感谢 [@atxy-blip](https://github.com/atxy-blip) 开发的 [NJUThesis](https://github.com/nju-lug/NJUThesis) LaTeX 模板，文档十分详细，本模板大体结构都是参考 NJUThesis 的文档开发的。
+- 感谢 [@csimide](https://github.com/csimide) 帮忙补充的 [bilingual-bibliography](https://github.com/nju-lug/modern-nju-thesis/issues/3)。
 - 感谢 [HUST-typst-template](https://github.com/werifu/HUST-typst-template) 与 [sysu-thesis-typst](https://github.com/howardlau1999/sysu-thesis-typst) 等 Typst 中文论文模板。
 
 

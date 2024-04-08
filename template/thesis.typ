@@ -1,4 +1,4 @@
-#import "@preview/modern-nju-thesis:0.3.0": documentclass
+#import "@preview/modern-nju-thesis:0.3.1": documentclass
 
 #let (
   // 布局函数
