@@ -8,7 +8,7 @@ description = "南京大学学位论文模板。Modern Nanjing University Thesis
 repository = "https://github.com/touying-typ/touying"
 keywords = ["Nanjing University", "thesis"]
 categories = ["thesis"]
-exclude = ["images"]
+exclude = ["imgs"]
 
 [template]
 path = "template"
