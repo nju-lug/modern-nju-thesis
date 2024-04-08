@@ -1,5 +1,8 @@
 #import "../lib.typ": documentclass
 
+// 你首先应该安装 https://github.com/nju-lug/modern-nju-thesis/tree/main/fonts 里的所有字体，
+// 如果是 Web App 上编辑，你应该手动上传这些字体文件，否则不能正常使用「楷体」和「仿宋」，导致显示错误。
+
 #let (
   // 布局函数
   twoside, doc, preface, mainmatter, mainmatter-end, appendix,
