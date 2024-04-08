@@ -1,6 +1,6 @@
 [package]
 name = "modern-nju-thesis"
-version = "0.3.1"
+version = "0.3.2"
 entrypoint = "lib.typ"
 authors = ["OrangeX4"]
 license = "MIT"

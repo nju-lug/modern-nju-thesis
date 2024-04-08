@@ -37,7 +37,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 模板已经上传到了 Typst Universe，使用起来十分简单，理论上只需要通过
 
 ```typst
-#import "@preview/modern-nju-thesis:0.3.1": documentclass
+#import "@preview/modern-nju-thesis:0.3.2": documentclass
 ```
 
 导入即可。
