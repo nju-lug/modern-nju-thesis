@@ -1,6 +1,6 @@
 # 南京大学学位论文 modern-nju-thesis
 
-南京大学毕业论文（设计）的 Typst 模板，能够简洁、快速、持续生成 PDF 格式的毕业论文。
+南京大学毕业论文（设计）的 Typst 模板，能够简洁、快速、持续生成 PDF 格式的毕业论文。[Typst Universe](https://typst.app/universe/package/modern-nju-thesis)
 
 Typst 非官方中文交流群：793548390
 
@@ -46,7 +46,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑，这是一个 [例子](https://typst.app/project/rgiwHIjdPOnXr9HJb8H0oa)。
 
-实际上，我们只需要在 [Web App](https://typst.app/) 中的 `Start from template` 里选择 `modern-nju-thesis`，即可在线创建模板并使用。
+实际上，我们只需要在 [Web App](https://typst.app/?template=modern-nju-thesis&version=0.3.2) 中的 `Start from template` 里选择 `modern-nju-thesis`，即可在线创建模板并使用。
 
 ![](imgs/template.png)
 
