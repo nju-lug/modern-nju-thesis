@@ -3,7 +3,7 @@
 
 // 后记，重置 heading 计数器
 #let appendix(
-  numbering: custom-numbering.with(first-level: "", depth: 3, "1.1 "),
+  numbering: custom-numbering.with(first-level: "", depth: 4, "1.1 "),
   // figure 计数
   show-figure: i-figured.show-figure.with(numbering: "1.1"),
   // equation 计数
