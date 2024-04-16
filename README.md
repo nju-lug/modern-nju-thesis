@@ -37,7 +37,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 模板已经上传到了 Typst Universe，使用起来十分简单，理论上只需要通过
 
 ```typst
-#import "@preview/modern-nju-thesis:0.3.2": documentclass
+#import "@preview/modern-nju-thesis:0.3.3": documentclass
 ```
 
 导入即可。
@@ -46,7 +46,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑，这是一个 [例子](https://typst.app/project/rgiwHIjdPOnXr9HJb8H0oa)。
 
-实际上，我们只需要在 [Web App](https://typst.app/?template=modern-nju-thesis&version=0.3.2) 中的 `Start from template` 里选择 `modern-nju-thesis`，即可在线创建模板并使用。
+实际上，我们只需要在 [Web App](https://typst.app/?template=modern-nju-thesis&version=0.3.3) 中的 `Start from template` 里选择 `modern-nju-thesis`，即可在线创建模板并使用。
 
 ![](imgs/template.png)
 
@@ -54,11 +54,7 @@ Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑，这�
 
 **但是 Web App 并没有安装本地 Windows 或 MacOS 所拥有的字体，所以字体上可能存在差异，所以推荐本地编辑！**
 
-**你需要手动上传 fonts 目录下的字体文件到项目中，否则会导致显示错误，出现空白！**
-
-**你需要手动上传 fonts 目录下的字体文件到项目中，否则会导致显示错误，出现空白！**
-
-**你需要手动上传 fonts 目录下的字体文件到项目中，否则会导致显示错误，出现空白！**
+**你需要手动上传 fonts 目录下的字体文件到项目中，否则会导致字体显示错误！**
 
 PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。Overleaf 是在后台服务器运行了一个 LaTeX 编译器，本质上是计算密集型的服务；而 Typst 只需要在浏览器端使用 WASM 技术执行，本质上是 IO 密集型的服务，所以对服务器压力很小（只需要负责文件的云存储与协作同步功能）。
 
