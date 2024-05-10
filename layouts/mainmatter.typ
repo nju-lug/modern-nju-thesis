@@ -76,6 +76,7 @@
     first-line-indent: first-line-indent
   )
   show par: set block(spacing: spacing)
+  show raw: set text(font: fonts.等宽)
   // 3.2 脚注样式
   show footnote.entry: set text(font: fonts.宋体, size: 字号.五号)
   // 3.3 设置 figure 的编号
