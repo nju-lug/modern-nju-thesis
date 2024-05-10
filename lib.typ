@@ -26,10 +26,9 @@
 #import "utils/bilingual-bibliography.typ": bilingual-bibliography
 #import "utils/custom-numbering.typ": custom-numbering
 #import "utils/custom-heading.typ": heading-display, active-heading, current-heading
-#import "utils/indent.typ": indent
+#import "utils/indent.typ": indent, fake-par
 #import "@preview/i-figured:0.2.4": show-figure, show-equation
-#import "utils/style.typ": 字体
-#import "utils/style.typ": 字号
+#import "utils/style.typ": 字体, 字号
 
 // 使用函数闭包特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `templates` 内部函数。
 #let documentclass(
