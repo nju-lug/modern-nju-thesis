@@ -37,7 +37,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 模板已经上传到了 Typst Universe，使用起来十分简单，理论上只需要通过
 
 ```typst
-#import "@preview/modern-nju-thesis:0.3.3": documentclass
+#import "@preview/modern-nju-thesis:0.3.4": documentclass
 ```
 
 导入即可。
@@ -46,7 +46,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑，这是一个 [例子](https://typst.app/project/rgiwHIjdPOnXr9HJb8H0oa)。
 
-实际上，我们只需要在 [Web App](https://typst.app/?template=modern-nju-thesis&version=0.3.3) 中的 `Start from template` 里选择 `modern-nju-thesis`，即可在线创建模板并使用。
+实际上，我们只需要在 [Web App](https://typst.app/?template=modern-nju-thesis&version=0.3.4) 中的 `Start from template` 里选择 `modern-nju-thesis`，即可在线创建模板并使用。
 
 ![](imgs/template.png)
 
