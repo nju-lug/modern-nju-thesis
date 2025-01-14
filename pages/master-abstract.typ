@@ -1,4 +1,4 @@
-#import "@preview/pinit:0.1.3": pin, pinit-place
+#import "@preview/pinit:0.2.2": pin, pinit-place
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/indent.typ": fake-par
 #import "../utils/double-underline.typ": double-underline
@@ -128,7 +128,7 @@
       #set par(first-line-indent: 2em)
 
       #fake-par
-      
+
       #body
     ]
 
