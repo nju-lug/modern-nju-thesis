@@ -3,7 +3,6 @@
 // Repo: https://github.com/nju-lug/modern-nju-thesis
 // 在线模板可能不会更新得很及时，如果需要最新版本，请关注 Repo
 
-#import "@preview/anti-matter:0.0.2": anti-inner-end as mainmatter-end
 #import "layouts/doc.typ": doc
 #import "layouts/preface.typ": preface
 #import "layouts/mainmatter.typ": mainmatter
@@ -115,11 +114,6 @@
         )
       }
     },
-    mainmatter-end: (..args) => {
-      mainmatter-end(
-        ..args,
-      )
-    },
     appendix: (..args) => {
       appendix(
         ..args,
@@ -182,7 +176,7 @@
         )
       }
     },
-    
+
     // 中文摘要页，通过 type 分发到不同函数
     abstract: (..args) => {
       if doctype == "master" or doctype == "doctor" {
