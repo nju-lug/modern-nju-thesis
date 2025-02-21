@@ -47,8 +47,7 @@
     #pagebreak(weak: true, to: if twoside { "odd" })
 
     #set text(font: fonts.楷体, size: 字号.小四)
-    #set par(leading: leading, justify: true)
-    #show par: set block(spacing: spacing)
+    #set par(leading: leading, justify: true, spacing: spacing)
 
     // 标记一个不可见的标题用于目录生成
     #invisible-heading(level: 1, outlined: outlined, outline-title)

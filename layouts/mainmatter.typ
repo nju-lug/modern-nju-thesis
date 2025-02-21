@@ -71,9 +71,9 @@
   set par(
     leading: leading,
     justify: justify,
-    first-line-indent: first-line-indent
+    first-line-indent: first-line-indent,
+    spacing: spacing,
   )
-  show par: set block(spacing: spacing)
   show raw: set text(font: fonts.等宽)
   // 3.2 脚注样式
   show footnote.entry: set text(font: fonts.宋体, size: 字号.五号)
