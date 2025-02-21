@@ -66,7 +66,7 @@
         font: fonts.楷体,
         size: 字号.四号,
         bottom-edge: "descender",
-        if (anonymous and (key in anonymous-info-keys)) {
+        if anonymous and (key in anonymous-info-keys) {
           "█████"
         } else {
           body

@@ -29,15 +29,15 @@
 ) = {
   // 1.  默认参数
   fonts = 字体 + fonts
-  if (title-text-args == auto) {
+  if title-text-args == auto {
     title-text-args = (font: fonts.宋体, size: 字号.三号, weight: "bold")
   }
   // 引用页数的字体，这里用于显示 Times New Roman
-  if (reference-font == auto) {
+  if reference-font == auto {
     reference-font = fonts.宋体
   }
   // 字体与字号
-  if (font == auto) {
+  if font == auto {
     font = (fonts.黑体, fonts.宋体)
   }
 

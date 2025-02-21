@@ -22,11 +22,11 @@
 ) = {
   // 1.  默认参数
   fonts = 字体 + fonts
-  if (title-text-args == auto) {
+  if title-text-args == auto {
     title-text-args = (font: fonts.宋体, size: 字号.三号, weight: "bold")
   }
   // 字体与字号
-  if (font == auto) {
+  if font == auto {
     font = fonts.宋体
   }
 
@@ -54,7 +54,7 @@
   i-figured.outline(target-kind: image, title: none)
 
   // 手动分页
-  if (twoside) {
+  if twoside {
     pagebreak() + " "
   }
 }

@@ -70,7 +70,7 @@
       text(
         font: fonts.at(info-value-font, default: "宋体"),
         size: 字号.三号,
-        weight: if (key in bold-info-keys) { bold-level } else { "regular" },
+        weight: if key in bold-info-keys { bold-level } else { "regular" },
         bottom-edge: "descender",
         body,
       ),

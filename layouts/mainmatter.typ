@@ -48,11 +48,11 @@
 
   // 1.  默认参数
   fonts = 字体 + fonts
-  if (text-args == auto) {
+  if text-args == auto {
     text-args = (font: fonts.宋体, size: 字号.小四)
   }
   // 1.1 字体与字号
-  if (heading-font == auto) {
+  if heading-font == auto {
     heading-font = (fonts.黑体,)
   }
   // 1.2 处理 heading- 开头的其他参数
@@ -113,13 +113,13 @@
   }
   // 4.3 标题居中与自动换页
   show heading: it => {
-    if (array-at(heading-pagebreak, it.level)) {
+    if array-at(heading-pagebreak, it.level) {
       // 如果打上了 no-auto-pagebreak 标签，则不自动换页
-      if ("label" not in it.fields() or str(it.label) != "no-auto-pagebreak") {
+      if "label" not in it.fields() or str(it.label) != "no-auto-pagebreak" {
         pagebreak(weak: true)
       }
     }
-    if (array-at(heading-align, it.level) != auto) {
+    if array-at(heading-align, it.level) != auto {
       set align(array-at(heading-align, it.level))
       it
     } else {

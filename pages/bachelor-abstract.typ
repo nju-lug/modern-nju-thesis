@@ -37,7 +37,7 @@
 
   // 3.  内置辅助函数
   let info-value(key, body) = {
-    if (not anonymous or (key not in anonymous-info-keys)) {
+    if not anonymous or (key not in anonymous-info-keys) {
       body
     }
   }

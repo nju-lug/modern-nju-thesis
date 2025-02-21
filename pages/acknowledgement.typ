@@ -8,7 +8,7 @@
   outlined: true,
   body,
 ) = {
-  if (not anonymous) {
+  if not anonymous {
     pagebreak(weak: true, to: if twoside { "odd" })
     [
       #heading(level: 1, numbering: none, outlined: outlined, title) <no-auto-pagebreak>

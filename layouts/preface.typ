@@ -6,7 +6,7 @@
   it,
 ) = {
   // 分页
-  if (twoside) {
+  if twoside {
     pagebreak() + " "
   }
   counter(page).update(0)

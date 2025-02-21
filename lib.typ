@@ -77,7 +77,7 @@
     degree-en: auto,
   ) + info
 
-  (
+  return (
     // 将传入参数再导出
     doctype: doctype,
     degree: degree,

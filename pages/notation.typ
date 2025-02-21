@@ -29,7 +29,7 @@
   ))
 
   // 手动分页
-  if (twoside) {
+  if twoside {
     pagebreak() + " "
   }
 }
