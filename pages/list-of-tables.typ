@@ -18,8 +18,6 @@
   // 垂直间距
   above: 14pt,
   below: 14pt,
-  // 是否显示点号
-  fill: auto,
   ..args,
 ) = {
   // 1.  默认参数
