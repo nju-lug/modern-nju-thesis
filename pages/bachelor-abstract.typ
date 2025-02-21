@@ -1,6 +1,5 @@
 #import "../utils/custom-cuti.typ": fakebold
 #import "../utils/style.typ": 字号, 字体
-#import "../utils/indent.typ": fake-par
 #import "../utils/double-underline.typ": double-underline
 #import "../utils/invisible-heading.typ": invisible-heading
 
@@ -75,9 +74,7 @@
     #fakebold[摘要：]
 
     #[
-      #set par(first-line-indent: 2em)
-
-      #fake-par
+      #set par(first-line-indent: (amount: 2em, all: true))
       
       #body
     ]

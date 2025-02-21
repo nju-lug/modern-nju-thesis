@@ -1,4 +1,3 @@
-#import "../utils/indent.typ": indent
 #import "../utils/style.typ": 字号, 字体
 
 // 本科生声明页
@@ -49,9 +48,9 @@
 
   block[
     #set text(font: fonts.宋体, size: 字号.小三)
-    #set par(justify: true, first-line-indent: 2em, leading: 2.42em)
+    #set par(justify: true, first-line-indent: (amount: 2em, all: true), leading: 2.42em)
 
-    #indent 本人郑重承诺：所呈交的毕业论文（设计）（题目：#info.title.sum()）是在指导教师的指导下严格按照学校和院系有关规定由本人独立完成的。本毕业论文（设计）中引用他人观点及参考资源的内容均已标注引用，如出现侵犯他人知识产权的行为，由本人承担相应法律责任。本人承诺不存在抄袭、伪造、篡改、代写、买卖毕业论文（设计）等违纪行为。
+    本人郑重承诺：所呈交的毕业论文（设计）（题目：#info.title.sum()）是在指导教师的指导下严格按照学校和院系有关规定由本人独立完成的。本毕业论文（设计）中引用他人观点及参考资源的内容均已标注引用，如出现侵犯他人知识产权的行为，由本人承担相应法律责任。本人承诺不存在抄袭、伪造、篡改、代写、买卖毕业论文（设计）等违纪行为。
   ]
 
   v(76pt)

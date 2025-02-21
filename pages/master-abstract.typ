@@ -1,6 +1,5 @@
 #import "@preview/pinit:0.2.2": pin, pinit-place
 #import "../utils/style.typ": 字号, 字体
-#import "../utils/indent.typ": fake-par
 #import "../utils/double-underline.typ": double-underline
 #import "../utils/custom-tablex.typ": gridx, colspanx
 #import "../utils/invisible-heading.typ": invisible-heading
@@ -125,9 +124,7 @@
     #set text(font: fonts.楷体, size: 字号.小四)
 
     #[
-      #set par(first-line-indent: 2em)
-
-      #fake-par
+      #set par(first-line-indent: (amount: 2em, all: true))
 
       #body
     ]
