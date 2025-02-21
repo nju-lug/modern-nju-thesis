@@ -8,10 +8,6 @@ Typst 非官方中文交流群：793548390
 
 ![](imgs/editor.png)
 
-> [!IMPORTANT]
->
-> 目前此模板还无法在 Typst 0.13.0 下正常使用，请暂时先使用 Typst 0.12.0 版本进行编译。
-
 ## 劣势
 
 - Typst 是一门新生的排版标记语言，还做不到像 Word 或 LaTeX 一样成熟稳定。
@@ -176,10 +172,31 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 可以参考 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [FAQ](https://typst-doc-cn.github.io/guide/)。
 
+一些常见问题：
+
+- [如何在段落内加入行间数学公式以避免首行缩进？](https://typst-doc-cn.github.io/guide/FAQ/block-equation-in-paragraph.html)
+
 
 ### 目前 Typst 有哪些第三方包和模板？
 
 可以查看 [Typst Universe](https://typst.app/universe)。
+
+我个人推荐的包：
+
+- 基础绘图：[cetz](https://typst.app/universe/package/cetz)
+- 绘制带有节点和箭头的图表，如流程图等：[fletcher](https://typst.app/universe/package/fletcher)
+- 定理环境：[ctheorems](https://typst.app/universe/package/ctheorems)
+- 伪代码：[lovelace](https://typst.app/universe/package/lovelace)
+- 带行号的代码显示包：[zebraw](https://typst.app/universe/package/zebraw)
+- 简洁的 Numbering 包：[numbly](https://typst.app/universe/package/numbly)
+- 幻灯片和演示文档：[touying](https://typst.app/universe/package/touying)
+- 相对定位布局包：[pinit](https://typst.app/universe/package/pinit)
+- 数学单位包：[unify](https://typst.app/universe/package/unify)
+- 数字格式化包：[zero](https://typst.app/universe/package/zero)
+- 写 LaTeX 数学公式：[mitex](https://typst.app/universe/package/mitex)
+- 写原生 Markdown：[cmarker](https://typst.app/universe/package/cmarker)
+- 写 Markdown-like checklist：[cheq](https://typst.app/universe/package/cheq)
+- 写 Markdown-like 表格：[tablem](https://typst.app/universe/package/tablem)
 
 
 ### 为什么只有一个 thesis.typ 文件，没有按章节分多个文件？
@@ -227,6 +244,8 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 其他现存的 Typst 中文论文模板大多都是在 2023 年 7 月份之前（Typst Verison 0.6 之前）开发的，当时 Typst 还不不够成熟，甚至连 **包管理** 功能都还没有，因此当时的 Typst 中文论文模板的开发者基本都是自己从头写了一遍需要的功能/函数，因此造成了 **代码耦合度高**、**意大利面条式代码**、**重复造轮子** 与 **难以自定义样式** 等问题。
 
 该模板是在 2023 年 10 ～ 11 月份（Typst Verison 0.9 时）开发的，此时 Typst 语法基本稳定，并且提供了 **包管理** 功能，因此能够减少很多不必要的代码。
+
+PS：2025 年 2 月进行了 Typst 0.13 的迁移更新。
 
 并且我对模板的文件架构进行了解耦，主要分为了 `utils`、`pages` 和 `layouts` 三个目录，这三个目录可以看后文的开发者指南，并且使用 **闭包** 特性实现了类似不可变全局变量的全局配置能力，即模板中的 `documentclass` 函数类。
 
