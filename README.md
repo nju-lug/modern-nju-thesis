@@ -37,7 +37,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 模板已经上传到了 Typst Universe，使用起来十分简单，理论上只需要通过
 
 ```typst
-#import "@preview/modern-nju-thesis:0.3.4": documentclass
+#import "@preview/modern-nju-thesis:0.4.0": documentclass
 ```
 
 导入即可。
@@ -46,7 +46,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 Typst 提供了官方的 Web App，支持像 Overleaf 一样在线编辑，这是一个 [例子](https://typst.app/project/rgiwHIjdPOnXr9HJb8H0oa)。
 
-实际上，我们只需要在 [Web App](https://typst.app/?template=modern-nju-thesis&version=0.3.4) 中的 `Start from template` 里选择 `modern-nju-thesis`，即可在线创建模板并使用。
+实际上，我们只需要在 [Web App](https://typst.app/?template=modern-nju-thesis&version=0.4.0) 中的 `Start from template` 里选择 `modern-nju-thesis`，即可在线创建模板并使用。
 
 ![](imgs/template.png)
 
@@ -146,7 +146,7 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 ```typst
 #let (...) = documentclass(
-  fonts: (楷体: ("Times New Roman", "FZKai-Z03S")),
+  fonts: (楷体: ((name: "Times New Roman", covers: "latin-in-cjk"), "FZKai-Z03S")),
 )
 ```
 
@@ -155,6 +155,17 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 **字体名称可以通过 `typst fonts` 命令查询。**
 
 如果找不到你所需要的字体，可能是因为 **该字体变体（Variants）数量过少**，导致 Typst 无法识别到该中文字体。
+
+
+### 为什么 Typst 有很多关于字体的警告？
+
+你会发现 Typst 有许多关于字体的警告，这是因为 modern-nju-thesis 加入了很多不必要的 fallback 字体，你可以自定义字体消除警告，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」。
+
+```typst
+#let (...) = documentclass(
+  fonts: (楷体: ((name: "Times New Roman", covers: "latin-in-cjk"), "FZKai-Z03S")),
+)
+```
 
 
 ### 学习 Typst 需要多久？
