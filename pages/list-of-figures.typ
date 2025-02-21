@@ -1,5 +1,4 @@
 #import "@preview/i-figured:0.2.4"
-#import "@preview/outrageous:0.1.0"
 #import "../utils/invisible-heading.typ": invisible-heading
 #import "../utils/style.typ": 字号, 字体
 
@@ -13,13 +12,12 @@
   outlined: false,
   title-vspace: 32pt,
   title-text-args: auto,
-  // caption 的 separator
-  separator: "  ",
   // 字体与字号
   font: auto,
   size: 字号.小四,
   // 垂直间距
-  vspace: 14pt,
+  above: 14pt,
+  below: 14pt,
   // 是否显示点号
   fill: auto,
   ..args,
@@ -49,19 +47,9 @@
 
   v(title-vspace)
 
-  show outline.entry: outrageous.show-entry.with(
-    // 保留 Typst 基础样式
-    ..outrageous.presets.typst,
-    body-transform: (level, it) => {
-      // 因为好像没找到 separator 的参数，所以这里就手动寻找替换了
-      if (it.has("children") and it.children.at(3, default: none) == [#": "]) {
-        it.children.slice(0, 3).sum() + separator + it.children.slice(4).sum()
-      } else {
-        it
-      }
-    },
-    vspace: (vspace,),
-    fill: (fill,),
+  show outline.entry: set block(
+    above: above,
+    below: below,
   )
 
   // 显示目录
