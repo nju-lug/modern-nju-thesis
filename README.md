@@ -196,7 +196,7 @@ PS: 虽然与 Overleaf 看起来相似，但是它们底层原理并不相同。
 
 - 基础绘图：[cetz](https://typst.app/universe/package/cetz)
 - 绘制带有节点和箭头的图表，如流程图等：[fletcher](https://typst.app/universe/package/fletcher)
-- 定理环境：[ctheorems](https://typst.app/universe/package/ctheorems)
+- 定理环境：[theorion](https://typst.app/universe/package/theorion)
 - 伪代码：[lovelace](https://typst.app/universe/package/lovelace)
 - 带行号的代码显示包：[zebraw](https://typst.app/universe/package/zebraw)
 - 简洁的 Numbering 包：[numbly](https://typst.app/universe/package/numbly)
