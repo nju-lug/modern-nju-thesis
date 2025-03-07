@@ -78,15 +78,14 @@
   pagebreak(weak: true, to: if twoside { "odd" })
 
   [
-    #set text(font: fonts.楷体, size: 字号.四号)
-    #set par(leading: leading, justify: true)
-    #show par: set block(spacing: spacing)
+    
+    #set par(leading: leading, spacing: spacing,justify: true)
 
     // 标记一个不可见的标题用于目录生成
     #invisible-heading(level: 1, outlined: outlined, outline-title)
 
     #align(center)[
-      #set text(size: 字号.小二, weight: "bold")
+      #set text(font: fonts.楷体,size: 字号.小二, weight: "bold")
 
       #v(8pt)
 
@@ -120,9 +119,9 @@
 
     #v(-5pt)
 
-    #set text(font: fonts.楷体, size: 字号.小四)
+    
 
-    #[
+    #[#set text(font: fonts.楷体, size: 字号.小四)
       #set par(first-line-indent: (amount: 2em, all: true))
 
       #body
@@ -130,6 +129,8 @@
 
     #v(10pt)
 
-    KEYWORDS: #(("",)+ keywords.intersperse("; ")).sum()
+    #[#set text(font: fonts.楷体, size: 字号.小四)
+      KEYWORDS: #(("",)+ keywords.intersperse("; ")).sum()
+      ]
   ]
 }
