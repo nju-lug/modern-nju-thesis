@@ -3,7 +3,7 @@
 #import "../utils/double-underline.typ": double-underline
 #import "../utils/custom-tablex.typ": gridx, colspanx
 #import "../utils/invisible-heading.typ": invisible-heading
-
+#import "@preview/cuti:0.3.0": *
 // 研究生中文摘要页
 #let master-abstract(
   // documentclass 传入的参数
@@ -79,15 +79,14 @@
   pagebreak(weak: true, to: if twoside { "odd" })
 
   [
-    #set text(font: fonts.楷体, size: 字号.四号)
-    #set par(leading: leading, justify: true)
-    #show par: set block(spacing: spacing)
+    // #set text(font: fonts.楷体, size: 字号.四号)
+    #set par(leading: leading, spacing: spacing,justify: true)
 
     // 标记一个不可见的标题用于目录生成
     #invisible-heading(level: 1, outlined: outlined, outline-title)
 
     #align(center)[
-      #set text(size: 字号.小二, weight: "bold")
+      #set text(font: fonts.楷体,size: 字号.小二, weight: "bold")
 
       #v(8pt)
 
@@ -121,16 +120,19 @@
 
     #v(-5pt)
 
-    #set text(font: fonts.楷体, size: 字号.小四)
+    // #set text(font: fonts.楷体, size: 字号.小四)
 
-    #[
+    #[#set text(font: fonts.楷体, size: 字号.小四)
       #set par(first-line-indent: (amount: 2em, all: true))
 
       #body
     ]
 
     #v(10pt)
-
-    *关键词*：#(("",)+ keywords.intersperse("；")).sum()
+    #[
+      #set text(font: fonts.楷体, size: 字号.小四)
+      #fakebold[关键词]：#(("",)+ keywords.intersperse("；")).sum()
+    ]
+    
   ]
 }

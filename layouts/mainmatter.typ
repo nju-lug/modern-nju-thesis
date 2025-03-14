@@ -167,7 +167,13 @@
       }
     )
   }))
-
+  context {
+  if calc.even(here().page()){
+    set page(numbering: "I",header: none)
+    // counter(page).update(1)
+  pagebreak() + " "
+}
+}
   counter(page).update(1)
 
   it
