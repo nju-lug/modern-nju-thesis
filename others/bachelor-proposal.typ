@@ -32,7 +32,7 @@
     [导师所在院系], [], [是否校内], [],
     [指导教师姓名二 \ （选填）], [], [职称], [],
     [导师所在院系], [], [是否校内], [],
-    [毕设类型], table.cell(colspan: 3)[#sym.ballot.x 毕业论文 #h(1fr) #sym.ballot 毕业设计（含毕业作品） #h(1fr)],
+    [毕设类型], table.cell(colspan: 3)[#sym.ballot.cross 毕业论文 #h(1fr) #sym.ballot 毕业设计（含毕业作品） #h(1fr)],
     [论文题目], table.cell(colspan: 3)[],
   )
 }
