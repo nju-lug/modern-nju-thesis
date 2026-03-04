@@ -62,7 +62,7 @@
 
     #fakebold[题目：]#info-value("title", (("",)+ info.title).sum())
 
-    #fakebold[院系：]#info-value("department", info.department)
+    #fakebold[学院：]#info-value("department", info.department)
 
     #fakebold[专业：]#info-value("major", info.major)
 

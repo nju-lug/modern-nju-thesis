@@ -135,7 +135,7 @@
     columns: (info-key-width, 1fr, info-key-width, 1fr),
     column-gutter: column-gutter,
     row-gutter: row-gutter,
-    info-key("院　　系"),
+    info-key("学　　院"),
     info-long-value("department", info.department),
     info-key("专　　业"),
     info-long-value("major", info.major),
