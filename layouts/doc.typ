@@ -30,5 +30,12 @@
     author: info.author,
   )
 
+  // 5. 修复多个引用 cite 时的样式问题
+  //    U+2013 -> U+002D
+  show cite: it => {
+    show "–": "-"
+    it
+  }
+
   it
 }
