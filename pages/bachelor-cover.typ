@@ -13,6 +13,7 @@
   min-title-lines: 2,
   info-inset: (x: 0pt, bottom: 1pt),
   info-key-width: 72pt,
+  info-key-second-width: 48pt,
   info-key-font: "楷体",
   info-value-font: "楷体",
   column-gutter: -3pt,
@@ -132,7 +133,7 @@
   }
 
   block(width: 318pt, grid(
-    columns: (info-key-width, 1fr, info-key-width, 1fr),
+    columns: (info-key-width, 1fr, info-key-second-width, 1fr),
     column-gutter: column-gutter,
     row-gutter: row-gutter,
     info-key("学　　院"),
@@ -143,18 +144,18 @@
     ..info.title.map((s) => info-long-value("title", s)).intersperse(info-key("　")),
     info-key("年　　级"),
     info-short-value("grade", info.grade),
-    info-key("学　　号"),
+    info-key("学  号"),
     info-short-value("student-id", info.student-id),
     info-key("学生姓名"),
     info-long-value("author", info.author),
     info-key("指导教师"),
     info-short-value("supervisor", info.supervisor.at(0)),
-    info-key("职　　称"),
+    info-key("职  称"),
     info-short-value("supervisor", info.supervisor.at(1)),
     ..(if info.supervisor-ii != () {(
       info-key("第二导师"),
       info-short-value("supervisor-ii", info.supervisor-ii.at(0)),
-      info-key("职　　称"),
+      info-key("职  称"),
       info-short-value("supervisor-ii", info.supervisor-ii.at(1)),
     )} else {()}),
     info-key("提交日期"),
