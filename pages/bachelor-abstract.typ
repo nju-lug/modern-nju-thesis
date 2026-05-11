@@ -68,7 +68,7 @@
 
     #fakebold[本科生姓名：]#info-value("author", info.author)
 
-    #fakebold[指导教师（姓名、职称）：]#info-value("supervisor", info.supervisor.at(0) + info.supervisor.at(1)) #(if info.supervisor-ii != () [#h(1em) #info-value("supervisor-ii", info.supervisor-ii.at(0) + info.supervisor-ii.at(1))])
+    #fakebold[指导教师（姓名、职称）：]#info-value("supervisor", info.supervisor.at(0) + " " + info.supervisor.at(1)) #(if info.supervisor-ii != () [#h(1em) #info-value("supervisor-ii", info.supervisor-ii.at(0) + " " + info.supervisor-ii.at(1))])
 
     #fakebold[摘要：]
 
