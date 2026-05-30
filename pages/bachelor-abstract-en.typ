@@ -72,7 +72,12 @@
 
     MENTOR: #info-value("supervisor-en", info.supervisor-en) #(if info.supervisor-ii-en != "" [#h(1em) #info-value("supervisor-ii-en", info.supervisor-ii-en)])
 
-    ABSTRACT: #body
+    ABSTRACT: 
+
+    #[
+      #set par(first-line-indent: (amount: 2em, all: true))
+      #body
+    ]
 
     #v(1em)
 
