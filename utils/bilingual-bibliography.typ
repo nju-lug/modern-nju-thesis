@@ -37,7 +37,7 @@
     }
   }
 
-  show grid.cell.where(x: 1): it => {
+  let improve-bib-entry(it) = {
     // 后续的操作是对 string 进行的。
     let ittext = to-string(it)
     // 判断是否为中文文献：去除特定词组后，仍有至少两个连续汉字。
@@ -140,6 +140,11 @@
       )
       reptext
     }
+  }
+
+  show std.bibliography: bib => {
+    show grid.cell.where(x: 1): improve-bib-entry
+    bib
   }
 
   set text(lang: "zh")
